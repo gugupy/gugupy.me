@@ -1,15 +1,15 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Gughanathan",
+  lastName: "Mani",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Python Developer / DevOps Engineer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Tamil", "Kannada","English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -29,22 +29,22 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/gugupy",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/gughanathan-m-079913171/",
   },
   {
     name: "X",
     icon: "x",
-    link: "",
+    link: "https://x.com/ManiGughan",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:gugu.ap900@gmail.com",
   },
 ];
 
@@ -52,11 +52,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Python Developer and DevOps Engineer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Gugu, a Python developer at <InlineCode>BI2Value GmBH</InlineCode>, specializing in building 
+      Flask and AI-powered applications. In my free time, I work on personal projects, exploring new 
+      ideas and technologies.
     </>
   ),
 };
@@ -74,16 +75,25 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://teams.microsoft.com/l/meeting/new",
+  },
+  freelancer: {
+    display: true,
+    link: "https://www.freelancer.in/hireme/guguap900",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a freelancer, passionate Python developer with a strong commitment to open-source contributions and a 
+        growing expertise in ReactJS. I work extensively with Superset and Flask-AppBuilder to build 
+        data-driven applications, leveraging my experience across Azure, AWS, and GCP to deliver scalable 
+        and efficient solutions. 
+        <br/><br/>
+        Currently, I am expanding my skill set by diving deeper into frontend 
+        development while maintaining a solid foundation in backend systems. I am always eager to learn, 
+        collaborate, and contribute to innovative projects that push the boundaries of technology.
       </>
     ),
   },
@@ -92,41 +102,54 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "BI2Value GmBH",
+        timeframe: "2023 - Present",
+        role: "Python Developer/DevOps Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Customize Apache superset and maintain.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Developing Phelina a powerful AI for Data insights.
           </>,
+          <>
+            Create and maintain the Airflow DAGs for the data pipeline.
+          </>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/projects/qmantic/phelina-01.gif",
+            alt: "Pheline MSTeams Bot",
             width: 16,
             height: 9,
-          },
+          }
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "ITC Infotech India Ltd",
+        timeframe: "2019 - 2023",
+        role: "Linux Administrator/Azure Cloud Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Managed and maintained Linux servers and Azure cloud infrastructure.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Setup complete infrastructure for the new projects.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Fractalio Data Pvt Ltd",
+        timeframe: "2017 - 2019",
+        role: "Linux Administrator",
+        achievements: [
+          <>
+            Managed and maintained Linux servers on client site.
+          </>,
+          <>
+            Monitor and daily/monthly backup of the servers.
           </>,
         ],
         images: [],
@@ -138,13 +161,9 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
+        name: "Anna University",
         description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
+      }
     ],
   },
   technical: {
@@ -152,36 +171,16 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Python",
+        description: <>Able to build any software using python.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Flask Appbuilder",
+        description: <>Quickly build web application Flask-Appbuilder + React.JS.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
