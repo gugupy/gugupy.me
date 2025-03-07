@@ -13,9 +13,6 @@ const nextConfig = {
   images: {
     unoptimized: true, // Needed for static export images
   },
-  experimental: {
-    esmExternals: "loose", // Better compatibility with CJS and ESM
-  },
 };
 
 export default withMDX(nextConfig);
