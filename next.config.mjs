@@ -1,8 +1,5 @@
 import mdx from "@next/mdx";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 
-// Ensure compatibility with Next.js export mode
 const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {},
@@ -14,10 +11,10 @@ const nextConfig = {
   output: "export",
   distDir: "dist",
   images: {
-    unoptimized: true, // Required for static export with images
+    unoptimized: true, // Needed for static export images
   },
   experimental: {
-    esmExternals: false, // Ensures compatibility with CJS plugins
+    esmExternals: "loose", // Better compatibility with CJS and ESM
   },
 };
 
