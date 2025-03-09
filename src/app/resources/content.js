@@ -191,7 +191,6 @@ const about = {
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
-      ,
       {
         title: "Infrastructure as Code (IaC)",
         description: <>Experience in Pulumi and Terraform.</>,
