@@ -182,6 +182,12 @@ const about = {
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
+      {
+        title: "Azure/AWS/GCP Cloud",
+        description: <>Experience all these three cloud providers.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
     ],
   },
 };
