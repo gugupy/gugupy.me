@@ -114,6 +114,9 @@ const about = {
           </>,
           <>
             Create and maintain the Airflow DAGs for the data pipeline.
+          </>,
+          <>
+            Maintain infrastructure on Azure and AWS.
           </>
         ],
         images: [
@@ -149,7 +152,7 @@ const about = {
             Managed and maintained Linux servers on client site.
           </>,
           <>
-            Monitor and daily/monthly backup of the servers.
+            Monitor daily and monthly backup of the servers.
           </>,
         ],
         images: [],
@@ -184,7 +187,14 @@ const about = {
       },
       {
         title: "Azure/AWS/GCP Cloud",
-        description: <>Experience all these three cloud providers.</>,
+        description: <>Proficient across all major cloud platforms.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+      ,
+      {
+        title: "Infrastructure as Code (IaC)",
+        description: <>Experience in Pulumi and Terraform.</>,
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
