@@ -296,4 +296,48 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const gitHub = {
+  label: "GitHub",
+  title: "Public GitHub Contributions",
+  description: `Open-source contributions by ${person.name}`,
+  username: "gugupy",
+  contributions: [
+    {
+      repoName: "Flask-Appbuilder",
+      repoUrl: "https://github.com/dpgaspar/Flask-AppBuilder",
+      contributions: [
+          { title: "refactor: enhance _get_list_widget and _list methods to accept additional kwargs", url: "https://github.com/dpgaspar/Flask-AppBuilder/pull/2285", type: "pull" },
+          { title: "feat: ability to customize action button color", url: "https://github.com/dpgaspar/Flask-AppBuilder/pull/2288", type: "pull" },
+          { title: "docs: updated Flask-Babel link and fix typo", url: "https://github.com/dpgaspar/Flask-AppBuilder/pull/2166", type: "pull" },
+      ],
+  },
+  {
+      repoName: "cpython",
+      repoUrl: "https://github.com/python/cpython",
+      contributions: [
+          { title: "No proper validation for month in Calendar Module", url: "https://github.com/python/cpython/issues/126476", type: "bug" },
+      ],
+  },
+  {
+      repoName: "apache/superset",
+      repoUrl: "https://github.com/apache/superset",
+      contributions: [
+          { title: "Bug Report: Time Grain issue on pivot-table-v2", url: "https://github.com/apache/superset/issues/24460", type: "bug" },
+      ],
+  },
+  {
+      repoName: "chatwoot/implementation-examples",
+      repoUrl: "https://github.com/chatwoot/chatwoot",
+      contributions: [
+          { title: "Initial commit for langchain-agent-bot", url: "https://github.com/chatwoot/implementation-examples/pull/10", type: "pull" },
+      ],
+  },
+  ]
+
+  // Create new GitHub contributions by adding a new object to the array below
+  // All contributions will be listed on the /home and /github routes
+  // The contribution type can be 'bug', 'pull', 'feature', 'other'
+};
+
+
+export { person, social, newsletter, home, about, blog, work, gallery, gitHub };

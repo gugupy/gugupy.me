@@ -7,6 +7,7 @@ import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
+import GitHubContributions from "@/components/GitHubContribution";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -97,6 +98,9 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      <RevealFx translateY="16" delay={0.6}>
+        <GitHubContributions />
+      </RevealFx>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
