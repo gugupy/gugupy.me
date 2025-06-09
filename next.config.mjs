@@ -8,11 +8,11 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
-  output: "export",
-  distDir: "dist",
-  images: {
-    unoptimized: true, // Needed for static export images
-  },
+  // output: "export",
+  // distDir: "dist",
+  // images: {
+  //   unoptimized: true, // Needed for static export images
+  // },
 };
 
 export default withMDX(nextConfig);

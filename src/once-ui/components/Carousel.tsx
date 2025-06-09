@@ -95,6 +95,7 @@ const Carousel: React.FC<CarouselProps> = ({
           alt={images[activeIndex]?.alt}
           aspectRatio={aspectRatio}
           src={images[activeIndex]?.src}
+          unoptimized={images[activeIndex]?.src.endsWith(".gif")}
           style={{
             ...(images.length > 1 && {
               cursor: "pointer",

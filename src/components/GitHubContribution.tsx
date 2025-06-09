@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, use } from 'react';
-import { Card, SmartLink, Spinner, Column, Row, TiltFx, Heading, Text, Accordion, Tag } from '../once-ui/components'; // Replace with Once UI components
+import React, { useState, useEffect } from 'react';
+import { Card, SmartLink, Spinner, Column, Row, Heading, Text, Accordion, Tag } from '../once-ui/components'; // Replace with Once UI components
 import { gitHub } from '@/app/resources/content';
 
 interface GitHubProps {
@@ -49,11 +49,11 @@ function GitHubContributions() {
         <>
             <Column fillWidth>
                 <Column paddingX='12' paddingY='12' gap='8' fillWidth overflowY='auto' overflowX='hidden' background='transparent'>
-                    {repo && <Heading as='h2' paddingY='12'>{repo.title}</Heading>}
-                    <img src="https://ghchart.rshah.org/gugupy" alt="GitHub Contribution Graph" />
+                    {repo && <Heading as='h2' paddingY='12' onBackground="neutral-medium">{repo.title}</Heading>}
+                    <img src="https://ghchart.rshah.org/145614/gugupy" alt="GitHub Contribution Graph" style={{ color: "red" }} />
                     {repo?.contributions
                         .map((repo) => (
-                            <Accordion title={repo.repoName} fillWidth>
+                            <Accordion title={repo.repoName} fillWidth onBackground='neutral-medium' key={repo.repoName}>
                                 <Column paddingX='12' paddingY='12' gap='8'>
                                     <Column gap="8">
                                         {repo.contributions.map((contribution: any, index: any) => (
@@ -64,7 +64,7 @@ function GitHubContributions() {
                                                 rel="noopener noreferrer"
                                             >
                                                 <Row gap='4'>
-                                                    <Text>- {contribution.title}</Text> <Tag>{contribution.type}</Tag>
+                                                    <Text>{contribution.title}</Text> <Tag>{contribution.type}</Tag>
                                                 </Row>
                                             </SmartLink>
                                         ))}
