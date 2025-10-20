@@ -1,0 +1,181 @@
+---
+title: "adminjs-keycloak"
+publishedAt: "2025-10-18"
+summary: "Keycloak authentication provider for AdminJS"
+images:
+  - "/images/projects/adminjs-keycloak/auth-flow.gif"
+team:
+  - name: "Gugu"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: ""
+link: "https://github.com/gugupy/adminjs-keycloak"
+---
+
+# @gugupy/adminjs-keycloak
+
+Keycloak authentication provider for AdminJS.
+
+> **⚠️ Compatibility Note**: This package has been tested and verified to work with the `@adminjs/express` plugin only. While it may work with other AdminJS plugins (Fastify, Hapi, etc.), it has not been tested with those frameworks. If you use this package with other plugins, please test thoroughly and report any issues.
+
+## Installation
+
+```bash
+npm install @gugupy/adminjs-keycloak
+```
+
+## Usage
+
+### Basic Configuration
+
+```typescript
+import KeycloakAuthProvider, { authenticateKeycloak } from '@gugupy/adminjs-keycloak';
+
+// Configure the auth provider
+const authProvider = new KeycloakAuthProvider({
+  authenticate: authenticateKeycloak,
+  keycloakConfig: {
+    keycloakUrl: 'https://your-keycloak-server.com',
+    realm: 'your-realm',
+    clientId: 'your-client-id',
+    clientSecret: 'your-client-secret',
+    adminJsUrl: 'http://localhost:3000',
+    loginPath: '/admin/login',
+  },
+});
+```
+
+### Express Middleware Configuration
+
+**Important**: This configuration is specifically for Express.js applications using `@adminjs/express`. You need to add a custom middleware to handle the Keycloak OAuth callback. This middleware intercepts the authorization code from Keycloak and converts it to a POST request that AdminJS can process:
+
+```typescript
+import express from 'express';
+import AdminJSExpress from '@adminjs/express';
+
+const app = express();
+
+// ... your AdminJS setup ...
+
+// Add a custom middleware to handle Keycloak OAuth callback (GET request with code)
+app.get(admin.options.rootPath + '/login', async (req, res, next) => {
+  
+  // Check if this is a Keycloak callback with authorization code
+  if (req.query.code) {
+    console.log('Found authorization code, creating form to POST to AdminJS...');
+    
+    // Instead of handling authentication manually, create a form that POSTs to AdminJS
+    // This way AdminJS handles the session properly
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Processing Login...</title>
+      </head>
+      <body>
+        <div style="text-align: center; margin-top: 50px;">
+          <h2>Processing your login...</h2>
+          <p>Please wait while we complete your authentication.</p>
+        </div>
+        <form id="loginForm" method="POST" action="${admin.options.rootPath}/login" style="display: none;">
+          <input type="hidden" name="code" value="${req.query.code}" />
+          <input type="hidden" name="redirectUri" value="${req.protocol}://${req.get('host')}${admin.options.rootPath}/login" />
+        </form>
+        <script>
+          document.getElementById('loginForm').submit();
+        </script>
+      </body>
+      </html>
+    `;
+    
+    return res.send(html);
+  }
+  
+  // If no code, continue to the normal AdminJS login flow
+  next();
+});
+
+```
+
+> **Why this middleware is needed**: Keycloak redirects back to your application with a GET request containing the authorization code. However, AdminJS expects authentication data to come via POST requests. This middleware bridges that gap by creating an HTML form that automatically submits the authorization code as a POST request to AdminJS.
+
+### Overriding the Login Component
+
+To use the Keycloak login component, you have two options:
+
+#### First create a component that return KeycloakLogin
+
+```typescript
+// components/login.tsx
+import { KeycloakLogin } from "@gugupy/adminjs-keycloak/components/login";
+import React from "react";
+
+const Login = () => {
+  return <KeycloakLogin />;
+};
+
+export default Login;
+```
+
+#### Then override the Login component in the componentLoader
+
+```typescript
+import { ComponentLoader } from 'adminjs';
+
+const componentLoader = new ComponentLoader();
+
+export const Components = {
+  Login: componentLoader.override('Login', "../components/login"),
+};
+
+export default componentLoader;
+```
+
+**Common Integration:**
+
+```typescript
+// Use the componentLoader with AdminJS
+const admin = new AdminJS({
+  componentLoader,
+  branding: {
+    companyName: 'Your Company',
+  },
+  // ... rest of your configuration
+});
+```
+
+### Configuration Options
+
+| Option | Description | Required |
+|--------|-------------|----------|
+| `keycloakUrl` | Base URL of your Keycloak server | ✅ |
+| `realm` | Keycloak realm name | ✅ |
+| `clientId` | Client ID registered in Keycloak | ✅ |
+| `clientSecret` | Client secret (for confidential clients) | ✅ |
+| `adminJsUrl` | Base URL of your AdminJS application | ✅ |
+| `loginPath` | Login route path (default: '/admin/login') | ✅ |
+
+### Authentication Flow
+
+1. User visits AdminJS login page
+2. Custom login component redirects to Keycloak
+3. User authenticates with Keycloak
+4. Keycloak redirects back with authorization code
+5. Provider exchanges code for tokens
+6. User session is established in AdminJS
+
+### Demo
+
+Watch the authentication flow in action:
+
+![Keycloak Authentication Flow Demo](/images/projects/adminjs-keycloak/auth-flow.gif)
+
+*The animation demonstrates the complete Keycloak OAuth flow integration with AdminJS, showing the user experience from login button click to successful authentication.*
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+
+## License
+
+ISC
