@@ -1,0 +1,81 @@
+---
+title: "Morse Code Translator"
+publishedAt: "2023-05-05"
+summary: "The python module which convert plain text to Morse Code and vice-versa."
+images:
+  - "/images/projects/morse/morse-01.jpg"
+team:
+  - name: "Gugu"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: ""
+link: "https://github.com/gugupy/morsecodetranslator"
+---
+
+## Overview
+
+Its converts plain text to morse code and vice versa and follows below rules for the conversion as per the morse-code algorithm,  
+
+1. Single space for same char repeats  
+2. Three spaces for different char  
+3. Seven spaces to differentiate the word  
+
+## Installation
+
+### Method 1
+
+To install the MorseCodeTranslator just run the command `pip install -U morse-transcript`
+
+### Method 2
+
+1. Clone the repository `git clone https://github.com/gugupy/morsecodetranslator.git`
+2. Run the command `pip install -e .`
+
+## Sample code
+
+```python
+from morsecodetranslator.morse import MorseCodeTranslator
+
+mct = MorseCodeTranslator()
+print(mct.encrypt('MORSE CODE'))
+print(mct.decrypt('--   ---   .-.   ...   .       -.-.   ---   -..   .'))
+```
+
+### output
+
+``` textmate
+--   ---   .-.   ...   .       -.-.   ---   -..   .  
+MORSE CODE
+```
+
+## CLI for morse code
+
+### Usage
+
+```textmate
+usage: morse [-h] {encrypt,decrypt} ...
+
+Convert plain text to morse code and vise-versa.
+
+positional arguments:
+  {encrypt,decrypt}  sub-commands
+
+optional arguments:
+  -h, --help         show this help message and exit
+
+Morse Code Converter
+```
+
+``` bash
+morse encrypt --text 'MORSE CODE'
+morse decrypt --morse-text '--   ---   .-.   ...   .       -.-.   ---   -..   .'
+```
+
+## Run Codecov
+
+```textmate
+pytest --cov=tests --cov-report term --cov-report xml:coverage.xml
+./codecov -t ${CODECOV_TOKEN}
+```
+
+---

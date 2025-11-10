@@ -1,0 +1,112 @@
+---
+title: "Keycloak Auth - AdminJS"
+summary: "Explain setup keycloak auth provider for AdminJS"
+publishedAt: "2025-10-30"
+tag: "AdminJS, Keycloak"
+---
+
+# @gugupy/adminjs-keycloak
+
+A minimal AdminJS auth provider for Keycloak (OpenID Connect). Exchanges an authorization code for tokens, fetches user info, and returns an AdminJS `CurrentAdmin` object.
+
+> **⚠️ Compatibility Note**: This package has been tested and verified to work with the `@adminjs/express` plugin only. While it may work with other AdminJS plugins (Fastify, Hapi, etc.), it has not been tested with those frameworks. If you use this package with other plugins, please test thoroughly and report any issues.
+
+## Installation
+
+```bash
+npm install @gugupy/adminjs-keycloak
+```
+
+### Example
+
+A minimal, runnable example is available: [gugupy/adminjs-express-keycloak](https://github.com/gugupy/adminjs-express-keycloak.git).
+
+- Simple Express + AdminJS integration using this Keycloak auth provider.
+- Demonstrates environment variable usage for configuration.
+- Includes OAuth callback middleware that converts Keycloak's GET (with code) into a POST AdminJS can process.
+- Exchanges the authorization code for tokens and populates the AdminJS CurrentAdmin object.
+- Implements a logout flow that clears the session and redirects to Keycloak's logout endpoint.
+- Use this example as a reference for configuration and a runnable implementation you can run locally.
+
+
+### Express Middleware Configuration
+
+**Important**: This configuration is specifically for Express.js applications using `@adminjs/express`. You need to add a custom middleware to handle the Keycloak OAuth callback. This middleware intercepts the authorization code from Keycloak and converts it to a POST request that AdminJS can process:
+
+```ts
+import express from 'express';
+import AdminJSExpress from '@adminjs/express';
+
+const app = express();
+
+// ... your AdminJS setup ...
+
+// Add a custom middleware to handle Keycloak OAuth callback (GET request with code)
+app.get(admin.options.rootPath + '/login', async (req, res, next) => {
+
+  // Check if this is a Keycloak callback with authorization code
+  if (req.query.code) {
+    console.log('Found authorization code, creating form to POST to AdminJS...');
+
+    // Instead of handling authentication manually, create a form that POSTs to AdminJS
+    // This way AdminJS handles the session properly
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Processing Login...</title>
+      </head>
+      <body>
+        <div style="text-align: center; margin-top: 50px;">
+          <h2>Processing your login...</h2>
+          <p>Please wait while we complete your authentication.</p>
+        </div>
+        <form id="loginForm" method="POST" action="${admin.options.rootPath}/login" style="display: none;">
+          <input type="hidden" name="code" value="${req.query.code}" />
+          <input type="hidden" name="redirectUri" value="${req.protocol}://${req.get('host')}${admin.options.rootPath}/login" />
+        </form>
+        <script>
+          document.getElementById('loginForm').submit();
+        </script>
+      </body>
+      </html>
+    `;
+
+    return res.send(html);
+  }
+
+  // If no code, continue to the normal AdminJS login flow
+  next();
+});
+
+app.get(admin.options.logoutPath, async (req, res) => {
+  // Destroy the session and redirect to the login page
+  const logoutUrl = await provider.handleLogout({ req, res });
+  console.log('Logout URL:', logoutUrl);
+  const session = (req as any).session;
+
+  if (session && typeof session.destroy === 'function') {
+    session.destroy(() => {
+      res.redirect(logoutUrl);
+    });
+  } else {
+    res.redirect(logoutUrl);
+  }
+});
+```
+
+> **Why this middleware is needed**: Keycloak redirects back with a GET containing the authorization code, while AdminJS expects a POST — this middleware converts the code into an automatic POST so AdminJS can complete authentication. For logout, destroy the AdminJS session and redirect to Keycloak's logout URL (for example via provider.handleLogout) to fully sign the user out.
+
+## Tips & Caveats
+
+- AdminJS's default login flow is form-based and expects POST handlers for `handleLogin`. The provider prefers the authorization `code` to be submitted in form data (`opts.data`) but will also check the query string.
+- The provider returns a simple `_auth` object inside `CurrentAdmin`. If you need to persist tokens or implement full token revocation/end-session semantics on the server, implement a custom route that interacts directly with Keycloak's endpoints (the `logout()` url is a client-side redirect).
+- Ensure your Keycloak client is configured with the correct `redirectUri` and allowed grant types (Authorization Code + optionally Refresh Token/offline_access).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+
+## License
+
+ISC — see the [LICENSE](./LICENSE) file for details.
