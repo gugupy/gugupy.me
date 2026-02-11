@@ -3,7 +3,7 @@
     "firstName": "Gughanathan",
     "lastName": "Mani",
     "role": "Python Developer / DevOps Engineer",
-    "avatar": "/images/avatar.jpg",
+    "avatar": "images/avatar.jpg",
     "location": "Asia/Kolkata",
     "languages": ["Tamil", "Kannada", "English"]
   },
@@ -111,7 +111,7 @@
         "order": 3,
         "category": "client",
         "description": "Homework management platform for German schools with AI-assisted validation, school/grade/class filters, calendar interface, and comment/solution attachments.",
-        "image": "/images/projects/hausaufgaben.jpg",
+        "image": "images/projects/hausaufgaben.jpg",
         "tags": ["Next.js", "AI", "Education", "TypeScript"],
         "links": {
           "live": "https://hausaufgaben.wiki/",
@@ -123,7 +123,7 @@
         "order": 2,
         "category": "personal",
         "description": "Open-source Keycloak authentication provider for AdminJS with Express integration. Integrates OAuth2/OpenID Connect for secure enterprise authentication.",
-        "image": "/images/projects/adminjs.jpg",
+        "image": "images/projects/adminjs.jpg",
         "tags": ["TypeScript", "Keycloak", "AdminJS", "OAuth2"],
         "links": {
           "live": "https://www.npmjs.com/package/@gugupy/adminjs-keycloak",
@@ -136,7 +136,7 @@
         "category": "client",
         "display": false,
         "description": "Talk to your data naturally with Phelina. AI-powered assistant using LangChain and OpenAI for database querying, billing analysis, and financial forecasting. Available 24/7 on Teams, Slack, WhatsApp.",
-        "image": "/images/projects/phelina.gif",
+        "image": "images/projects/phelina.gif",
         "tags": ["Python", "LangChain", "OpenAI", "Bot Framework"],
         "links": {
           "live": "https://qmantic.com/ai-data-assistant/",
@@ -148,7 +148,7 @@
         "order": 6,
         "category": "personal",
         "description": "Python module for converting plaintext to Morse code and vice versa. Available via pip as morse-transcript package for easy integration.",
-        "image": "/images/projects/morse.jpg",
+        "image": "images/projects/morse.jpg",
         "tags": ["Python", "CLI", "PyPI"],
         "links": {
           "live": "https://pypi.org/project/morse-transcript/",
@@ -160,7 +160,7 @@
         "order": 5,
         "category": "personal",
         "description": "Intelligent chatbot implementation using Langchain framework integrated with Chatwoot for seamless customer support automation.",
-        "image": "/images/projects/chatbot.jpg",
+        "image": "images/projects/chatbot.jpg",
         "tags": ["Python", "Langchain", "AI", "Chatwoot"],
         "links": {
           "live": "",
@@ -172,7 +172,7 @@
         "category": "client",
         "display": false,
         "description": "AI-powered phone assistant available 24/7. Fully automated call center that answers every call automatically, qualifies leads, and books appointments around the clock — even outside business hours. 100% GDPR compliant, made in Germany.",
-        "image": "/images/projects/fonki.jpg",
+        "image": "images/projects/fonki.jpg",
         "tags": ["AI", "VoIP", "Automation", "SaaS"],
         "links": {
           "live": "https://fonki.de/",
@@ -184,7 +184,7 @@
         "category": "personal",
         "display": false,
         "description": "Entity-driven admin app as a Fastify plugin. Auto-generates CRUD interfaces from your data models — think Flask-AppBuilder, but for the Node.js ecosystem. Fast, lightweight, RBAC support, and developer-friendly.",
-        "image": "/images/projects/fastify-admin.jpg",
+        "image": "images/projects/fastify-admin.jpg",
         "tags": ["Fastify", "Node.js", "Admin", "Coming Soon"],
         "links": {
           "live": "",
@@ -197,7 +197,7 @@
         "category": "client",
         "display": false,
         "description": "Migrate the existing website from its current setup (React) to a modern CMS-driven architecture powered by Django and Wagtail. The goal is to make the site easier to manage, scalable, and editor-friendly while keeping performance and SEO intact.",
-        "image": "/images/projects/data-insights.jpg",
+        "image": "images/projects/data-insights.jpg",
         "tags": ["Django", "Wagtail", "CMS", "Python"],
         "links": {
           "live": "https://mhps.org.in",
@@ -271,10 +271,10 @@
   "gallery": {
     "title": "My photo gallery",
     "images": [
-      { "src": "/images/gallery/vert-01.jpg", "alt": "image", "orientation": "vertical" },
-      { "src": "/images/gallery/hori-01.jpg", "alt": "image", "orientation": "horizontal" },
-      { "src": "/images/gallery/vert-02.jpg", "alt": "image", "orientation": "vertical" },
-      { "src": "/images/gallery/hori-02.jpg", "alt": "image", "orientation": "horizontal" }
+      { "src": "images/gallery/vert-01.jpg", "alt": "image", "orientation": "vertical" },
+      { "src": "images/gallery/hori-01.jpg", "alt": "image", "orientation": "horizontal" },
+      { "src": "images/gallery/vert-02.jpg", "alt": "image", "orientation": "vertical" },
+      { "src": "images/gallery/hori-02.jpg", "alt": "image", "orientation": "horizontal" }
     ]
   }
 }
