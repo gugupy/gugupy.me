@@ -84,20 +84,40 @@
       "title": "Technical skills",
       "skills": [
         {
-          "title": "Python",
-          "description": "Able to build any software using python."
+          "title": "Languages",
+          "items": ["Python", "JavaScript/TypeScript", "SQL"],
+          "description": "Able to build any software using Python.",
+          "icon": "code"
         },
         {
-          "title": "Azure/AWS/GCP Cloud",
-          "description": "Proficient across all major cloud platforms."
+          "title": "Cloud Platforms",
+          "items": ["Azure", "AWS", "GCP"],
+          "description": "Proficient across all major cloud platforms.",
+          "icon": "cloud"
         },
         {
           "title": "Infrastructure as Code (IaC)",
-          "description": "Experience in Pulumi and Terraform."
+          "items": ["Pulumi", "Terraform"],
+          "description": "Experience in Pulumi and Terraform.",
+          "icon": "infra"
         },
         {
-          "title": "OpenAI",
-          "description": "Building AI-powered applications using OpenAI APIs and LLMs."
+          "title": "Generative AI & LLMs",
+          "items": ["OpenAI API", "Azure OpenAI Service", "Realtime API"],
+          "description": "Building high-performance, AI-powered applications including low-latency voice and multimodal experiences.",
+          "icon": "ai"
+        },
+        {
+          "title": "Databases",
+          "items": ["PostgreSQL", "MySQL", "MongoDB"],
+          "description": "Designing and optimizing database schemas, queries, and performance tuning.",
+          "icon": "db"
+        },
+        {
+          "title": "Testing & CI/CD",
+          "items": ["PyTest", "GitHub Actions", "Azure DevOps Pipelines"],
+          "description": "Implementing robust testing strategies and automating CI/CD pipelines for seamless deployments.",
+          "icon": "test"
         }
       ]
     }
