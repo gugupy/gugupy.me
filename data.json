@@ -85,7 +85,7 @@
       "skills": [
         {
           "title": "Languages",
-          "items": ["Python", "JavaScript/TypeScript", "SQL"],
+          "items": ["Python", "JavaScript/TypeScript", "NodeJS", "GoLang"],
           "description": "Able to build any software using Python.",
           "icon": "code"
         },
@@ -99,7 +99,7 @@
           "title": "Infrastructure as Code (IaC)",
           "items": ["Pulumi", "Terraform"],
           "description": "Experience in Pulumi and Terraform.",
-          "icon": "infra"
+          "icon": "iac"
         },
         {
           "title": "Generative AI & LLMs",
@@ -118,6 +118,18 @@
           "items": ["PyTest", "GitHub Actions", "Azure DevOps Pipelines"],
           "description": "Implementing robust testing strategies and automating CI/CD pipelines for seamless deployments.",
           "icon": "test"
+        },
+        {
+          "title": "Containerization & Orchestration",
+          "items": ["Docker", "Kubernetes"],
+          "description": "Containerizing applications and orchestrating them using Kubernetes for scalable deployments.",
+          "icon": "container"
+        },
+        {
+          "title": "Frameworks & Libraries",
+          "items": ["Flask", "FastAPI", "React", "Next.js", "React Flow"],
+          "description": "Building web applications and APIs using popular frameworks and libraries.",
+          "icon": "framework"
         }
       ]
     }
