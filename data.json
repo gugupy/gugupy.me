@@ -214,7 +214,7 @@
         "name": "Fastify Admin",
         "order": 7,
         "category": "personal",
-        "display": false,
+        "display": true,
         "description": "Entity-driven admin app as a Fastify plugin. Auto-generates CRUD interfaces from your data models — think Flask-AppBuilder, but for the Node.js ecosystem. Fast, lightweight, RBAC support, and developer-friendly.",
         "image": "images/projects/fastify-admin.jpg",
         "tags": ["Fastify", "Node.js", "Admin", "Coming Soon"],
