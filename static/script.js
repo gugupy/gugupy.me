@@ -1,5 +1,19 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+// ── Theme accent palette ─────────────────────────────────────────────
+// Change these to retheme all JS-driven colors (canvas, particles, GSAP).
+// CSS colors are controlled by --accent-* variables in styles.css.
+const THEME = {
+  accent:             '#d97706',   // --accent-500
+  accentLight:        '#fbbf24',   // --accent-400
+  accentDark:         '#b45309',   // --accent-600
+  accentDarker:       '#92400e',   // --accent-700
+  particles:          ['#d97706', '#fbbf24', '#fcd34d', '#fde68a', '#d97706', '#92400e'],
+  canvasDarkRgb:      '217, 119, 6',   // dark-mode canvas fill
+  canvasLightRgb:     '180, 83, 9',    // light-mode canvas fill
+};
+// ─────────────────────────────────────────────────────────────────────
+
 // ── SVG icon map ──
 const ICONS = {
   github: '<svg class="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>',
@@ -160,7 +174,7 @@ function render(data) {
           <div class="flex items-center gap-3">${ICONS.education}<span>${studies}</span></div>
         </div>
         <div class="flex flex-col gap-3">
-          ${about.calendar?.display ? `<a href="${about.calendar.link}" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-5 py-2.5 bg-cyan-500 text-surface-950 font-semibold rounded-xl hover:bg-cyan-400 transition-colors text-sm">${ICONS.calendar} Schedule a Call</a>` : ''}
+          ${about.calendar?.display ? `<a href="${about.calendar.link}" target="_blank" rel="noopener" class="magnetic-btn group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-cyan-500 text-surface-950 font-semibold rounded-xl overflow-hidden text-sm"><span class="relative z-10">${ICONS.calendar}</span><span class="relative z-10">Schedule a Call</span><div class="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div></a>` : ''}
           ${about.freelancer?.display ? `<a href="${about.freelancer.link}" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-700 text-slate-300 font-medium rounded-xl hover:border-cyan-500/50 hover:text-cyan-400 transition-all text-sm">${ICONS.freelancer} Hire Me</a>` : ''}
         </div>
       </div>
@@ -267,7 +281,7 @@ function render(data) {
     skillsGrid.innerHTML += `
       <div class="skill-category skill-bg-${i % 5} bg-surface-900/30 border border-slate-800/50 rounded-2xl p-8 card-hover">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:var(--accent-s-bg);border:1px solid var(--accent-s-border)">
             ${iconSVG}
           </div>
           <h3 class="text-lg font-bold text-white">${skill.title}</h3>
@@ -275,11 +289,7 @@ function render(data) {
 
         <!-- New Skills Items Section -->
         <div class="flex flex-wrap gap-2 mb-4">
-          ${skill.items ? skill.items.map(item => `
-            <span class="px-3 py-1 text-xs font-medium bg-slate-800/50 text-cyan-400 border border-cyan-500/20 rounded-full">
-              ${item}
-            </span>
-          `).join('') : ''}
+          ${skill.items ? skill.items.map(item => `<span class="tag-pill skill-pill">${item}</span>`).join('') : ''}
         </div>
         <p class="text-slate-400 text-sm leading-relaxed">${skill.description}</p>
       </div>`;
@@ -337,7 +347,7 @@ function render(data) {
               <p class="text-slate-400 text-sm leading-relaxed" style="-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden">${project.description}</p>
               <!-- Tags -->
               <div class="flex flex-wrap gap-1.5">
-                ${project.tags.map(tag => `<span class="px-2.5 py-0.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-slate-400 text-xs font-mono">${tag}</span>`).join('')}
+                ${project.tags.map(tag => `<span class="tag-pill">${tag}</span>`).join('')}
               </div>
               <!-- Action buttons -->
               ${hasGithub || hasLive ? `
@@ -424,7 +434,7 @@ function render(data) {
   const ctaEl = document.getElementById('contact-cta');
   let ctaHTML = '';
   if (about.calendar?.display) {
-    ctaHTML += `<a href="${about.calendar.link}" target="_blank" rel="noopener" class="magnetic-btn inline-flex items-center gap-3 px-8 py-4 bg-cyan-500 text-surface-950 font-bold rounded-full hover:bg-cyan-400 transition-colors text-lg">${ICONS.calendar} Schedule a Call</a>`;
+    ctaHTML += `<a href="${about.calendar.link}" target="_blank" rel="noopener" class="magnetic-btn group relative inline-flex items-center gap-3 px-8 py-4 bg-cyan-500 text-surface-950 font-bold rounded-full overflow-hidden text-lg"><span class="relative z-10">${ICONS.calendar}</span><span class="relative z-10">Schedule a Call</span><div class="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div></a>`;
   }
   if (about.freelancer?.display) {
     ctaHTML += `<a href="${about.freelancer.link}" target="_blank" rel="noopener" class="magnetic-btn inline-flex items-center gap-3 px-8 py-4 border border-slate-700 text-slate-300 font-medium rounded-full hover:border-cyan-500/50 hover:text-cyan-400 transition-all text-lg">${ICONS.freelancer} Hire Me</a>`;
@@ -752,7 +762,7 @@ function initGSAP() {
             }
 
             // Particles burst outward
-            const colors = ['#06b6d4', '#22d3ee', '#67e8f9', '#a5f3fc', '#06b6d4', '#0e7490'];
+            const colors = THEME.particles;
             const particleCount = 30;
             for (let p = 0; p < particleCount; p++) {
               const particle = document.createElement('div');
@@ -985,7 +995,7 @@ function initGSAP() {
     // Border glow effect on reveal
     galleryItems.forEach((item, i) => {
       gsap.to(item, {
-        borderColor: 'rgba(6, 182, 212, 0.3)',
+        borderColor: `rgba(${THEME.canvasDarkRgb}, 0.3)`,
         duration: 0.5,
         delay: i * 0.2,
         yoyo: true,
@@ -1215,18 +1225,18 @@ function initGSAP() {
       ctx.textBaseline = 'middle';
 
       if (isDark) {
-        ctx.fillStyle = `rgba(6, 182, 212, ${alpha})`;
+        ctx.fillStyle = `rgba(${THEME.canvasDarkRgb}, ${alpha})`;
       } else {
-        ctx.fillStyle = `rgba(15, 118, 110, ${alpha * 3})`;
+        ctx.fillStyle = `rgba(${THEME.canvasLightRgb}, ${alpha * 3})`;
       }
 
       // Subtle glow on nearby particles
       if (dist < 200) {
         const glowIntensity = (200 - dist) / 200 * 0.15;
         if (isDark) {
-          ctx.shadowColor = 'rgba(6, 182, 212, 0.3)';
+          ctx.shadowColor = `rgba(${THEME.canvasDarkRgb}, 0.3)`;
         } else {
-          ctx.shadowColor = 'rgba(15, 118, 110, 0.2)';
+          ctx.shadowColor = `rgba(${THEME.canvasLightRgb}, 0.2)`;
         }
         ctx.shadowBlur = 15 * glowIntensity;
       }
@@ -1247,8 +1257,8 @@ function initGSAP() {
         if (dist < 120) {
           const lineAlpha = (1 - dist / 120) * (isDark ? 0.04 : 0.08);
           ctx.strokeStyle = isDark
-            ? `rgba(6, 182, 212, ${lineAlpha})`
-            : `rgba(15, 118, 110, ${lineAlpha})`;
+            ? `rgba(${THEME.canvasDarkRgb}, ${lineAlpha})`
+            : `rgba(${THEME.canvasLightRgb}, ${lineAlpha})`;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
