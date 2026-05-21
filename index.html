@@ -1,239 +1,247 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loading...</title>
-  <meta name="description" content="" />
-
-  <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Prevent FOUC: apply saved theme before paint -->
-  <script>
-    (function(){
-      var t = localStorage.getItem('theme');
-      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
-    })();
-  </script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cyan: { 400: 'var(--accent-400)', 500: 'var(--accent-500)', 600: 'var(--accent-600)' },
-            surface: {
-              50:  'var(--surface-50)',
-              100: 'var(--surface-100)',
-              800: 'var(--surface-800)',
-              900: 'var(--surface-900)',
-              950: 'var(--surface-950)',
-            },
-            slate: {
-              300: 'var(--slate-300)',
-              400: 'var(--slate-400)',
-              500: 'var(--slate-500)',
-              600: 'var(--slate-600)',
-              700: 'var(--slate-700)',
-              800: 'var(--slate-800)',
-            },
-            white: 'var(--color-white)',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts -->
+  <title>Gughanathan Mani — Senior Python & Backend Engineer</title>
+  <meta name="description" content="Senior Python & Backend Engineer specializing in AI, FastAPI, Cloud, and scalable backend systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
-  <link rel="stylesheet" href="static/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
-<body class="grain font-sans">
+<body>
 
-  <!-- Cursor Follower -->
-  <div class="cursor-follower" id="cursor"></div>
-
-  <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#hero" id="nav-brand" class="text-xl font-bold font-mono text-cyan-400 tracking-tight"></a>
-      <div id="nav-links" class="hidden md:flex items-center gap-8"></div>
-      <div class="flex items-center gap-3">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <!-- Moon icon (dark mode indicator) -->
-          <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          <!-- Sun icon (light mode indicator) -->
-          <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-        </button>
-        <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-cyan-400 transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo">Portfolio<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-hire">Hire Me</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </button>
-      </div>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden bg-surface-950/95 backdrop-blur-xl border-t border-slate-800">
-      <div id="mobile-menu-links" class="px-6 py-4 flex flex-col gap-4"></div>
+    <div class="nav-mobile">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <canvas id="code-particles-canvas" class="absolute inset-0 w-full h-full" style="pointer-events: none; z-index: 1;"></canvas>
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(var(--accent-rgb),0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--accent-rgb),0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
-    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px] animate-pulse" id="orb1"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/5 rounded-full blur-[150px]" id="orb2"></div>
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-      <div id="hero-greeting" class="opacity-0 mb-6"></div>
-      <h1 id="hero-name" class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 opacity-0" style="perspective:600px"></h1>
-      <p id="hero-tagline" class="text-2xl md:text-4xl font-light text-slate-300 mb-4 opacity-0 glow-text"></p>
-      <p id="hero-desc" class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 opacity-0"></p>
-      <div id="hero-cta" class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0">
-        <a href="#about" class="magnetic-btn group relative inline-flex items-center gap-2 px-8 py-3.5 bg-cyan-500 text-surface-950 font-semibold rounded-full overflow-hidden">
-          <span class="relative z-10">About Me</span>
-          <svg class="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          <div class="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-        </a>
-        <a href="#projects" class="magnetic-btn inline-flex items-center gap-2 px-8 py-3.5 border border-slate-700 text-slate-300 font-medium rounded-full hover:border-cyan-500/50 hover:text-cyan-400 transition-all">
-          Projects
-        </a>
+  <section id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open to new opportunities
       </div>
-      <div id="scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0">
-        <div class="flex flex-col items-center gap-2 text-slate-500">
-          <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
-          <div class="w-5 h-8 border-2 border-slate-600 rounded-full flex justify-center pt-1.5">
-            <div class="w-1 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
-          </div>
-        </div>
+      <h1 class="hero-title" id="hero-title"></h1>
+      <p class="hero-role" id="hero-role"></p>
+      <p class="hero-desc" id="hero-desc"></p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
+      <div class="hero-stack" id="hero-stack"></div>
     </div>
+    <a href="#about" class="hero-scroll">
+      <svg width="20" height="20"><use href="#icon-arrow-down"/></svg>
+    </a>
   </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar reveal">
+    <div class="container stats-inner" id="stats-bar"></div>
+  </div>
 
   <!-- ABOUT -->
-  <section id="about" class="relative py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4 mb-16 about-reveal">
-        <span class="text-cyan-400 font-mono text-sm">01</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">About Me</h2>
-        <div class="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></div>
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">About Me</p>
+        <h2 class="section-title">I build the engine under the hood</h2>
       </div>
-      <div class="grid md:grid-cols-5 gap-12 items-start">
-        <div id="about-card" class="md:col-span-2 about-reveal"></div>
-        <div id="about-bio" class="md:col-span-3 about-reveal"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="relative py-32">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4 mb-20 exp-reveal">
-        <span class="text-cyan-400 font-mono text-sm">02</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">Experience</h2>
-        <div class="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></div>
-      </div>
-      <div id="experience-timeline" class="relative">
-        <!-- Track (grey background line) -->
-        <div class="timeline-track"></div>
-        <!-- Progress (cyan fill, animated via GSAP) -->
-        <div class="timeline-progress" id="timeline-progress"></div>
-        <!-- Items rendered by JS -->
+      <div class="about-grid">
+        <div class="about-text reveal" id="about-text"></div>
+        <div class="about-card reveal" id="about-card"></div>
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="relative py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4 mb-16 skills-reveal">
-        <span class="text-cyan-400 font-mono text-sm">03</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">Technical Skills</h2>
-        <div class="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></div>
+  <section id="skills" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Technical Skills</p>
+        <h2 class="section-title">What I work with</h2>
       </div>
-      <div id="skills-grid" class="grid md:grid-cols-2 gap-8 items-start"></div>
+      <div class="skills-grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Experience</p>
+        <h2 class="section-title">Where I've worked</h2>
+      </div>
+      <div class="timeline" id="experience-timeline"></div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="relative py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4 mb-16 projects-reveal">
-        <span class="text-cyan-400 font-mono text-sm">04</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
-        <div class="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></div>
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Projects</p>
+        <h2 class="section-title">Featured work</h2>
       </div>
-      <div class="flex gap-3 mb-10 projects-reveal" id="project-filters">
-        <button class="project-filter-btn active px-5 py-2 rounded-full text-sm font-medium transition-all" data-filter="all">All</button>
-        <button class="project-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all" data-filter="client">Client</button>
-        <button class="project-filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all" data-filter="personal">Personal</button>
-      </div>
-      <div id="projects-grid" class="grid md:grid-cols-2 gap-8"></div>
     </div>
-  </section>
-
-  <!-- GITHUB CONTRIBUTIONS -->
-  <section id="github" class="relative py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4 mb-16 gh-reveal">
-        <span class="text-cyan-400 font-mono text-sm">05</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">Open Source Contributions</h2>
-        <div class="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></div>
-      </div>
-      <div id="github-grid" class="grid md:grid-cols-2 gap-8"></div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="relative py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4 mb-16 gallery-reveal">
-        <span class="text-cyan-400 font-mono text-sm">06</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">Gallery</h2>
-        <div class="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></div>
-      </div>
-      <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]"></div>
-    </div>
+    <div class="projects-grid" id="projects-grid"></div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="relative py-32 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="flex items-center justify-center gap-4 mb-8 contact-reveal">
-        <span class="text-cyan-400 font-mono text-sm">07</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">Get in Touch</h2>
+  <section id="contact">
+    <div class="container contact-inner">
+      <div class="section-header reveal" style="text-align:center">
+        <p class="section-eyebrow">Contact</p>
+        <h2 class="section-title">Let's build something together</h2>
+        <p class="contact-desc">I'm currently open to new opportunities. Whether you have a project in mind or just want to connect — my inbox is always open.</p>
       </div>
-      <p class="text-lg text-slate-400 mb-12 max-w-xl mx-auto contact-reveal">
-        Interested in working together? Let's connect and discuss your next project.
-      </p>
-      <div id="contact-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12"></div>
-      <div id="contact-cta" class="flex flex-col md:flex-row md:items-center md:justify-center contact-reveal gap-4"></div>
+      <div class="contact-grid reveal" id="contact-grid"></div>
+      <div class="contact-cta reveal">
+        <a id="contact-email-btn" href="#" class="btn btn-primary btn-lg">Send me an email →</a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-800/50 py-8">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p id="footer-copy" class="text-slate-500 text-sm font-mono"></p>
-      <p class="text-slate-600 text-xs">Built with GSAP + TailwindCSS</p>
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo" id="footer-name">Gugupy<span>.</span></span>
+      <span class="footer-copy">© 2026 · Built with care from India</span>
+      <div class="footer-links" id="footer-links"></div>
     </div>
   </footer>
-  <script src="static/script.js"></script>
+
+  <!-- Icon registry -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+
+    <!-- Social / contact -->
+    <symbol id="icon-github" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </symbol>
+    <symbol id="icon-twitter" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </symbol>
+    <symbol id="icon-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </symbol>
+
+    <!-- UI actions -->
+    <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15,3 21,3 21,9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </symbol>
+
+    <!-- Skill categories -->
+    <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="16 18 22 12 16 6"/>
+      <polyline points="8 6 2 12 8 18"/>
+    </symbol>
+    <symbol id="icon-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/>
+    </symbol>
+    <symbol id="icon-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+      <circle cx="7.5" cy="14.5" r="1.5"/>
+      <circle cx="16.5" cy="14.5" r="1.5"/>
+    </symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+      <polyline points="2 17 12 22 22 17"/>
+      <polyline points="2 12 12 17 22 12"/>
+    </symbol>
+    <symbol id="icon-container" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+      <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+      <line x1="12" y1="22.08" x2="12" y2="12"/>
+    </symbol>
+    <symbol id="icon-infra" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M8 21h8M12 17v4"/>
+    </symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="12" cy="5" rx="9" ry="3"/>
+      <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+      <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+    </symbol>
+    <symbol id="icon-pipeline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/>
+      <polyline points="1 20 1 14 7 14"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </symbol>
+
+    <!-- Project icons — Fonki / PAFIS -->
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+    </symbol>
+    <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/>
+      <path d="M5 3v4M19 17v4M3 5h4M17 19h4"/>
+    </symbol>
+
+    <!-- Project icons -->
+    <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+    </symbol>
+    <symbol id="icon-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 8V4H8"/>
+      <rect width="16" height="12" x="4" y="8" rx="2"/>
+      <path d="M2 14h2M22 14h-2M9 13v2M15 13v2"/>
+    </symbol>
+    <symbol id="icon-radio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/>
+      <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/>
+      <circle cx="12" cy="12" r="2"/>
+      <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/>
+      <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>
+    </symbol>
+
+  </svg>
+
+  <script src="./static/script.js"></script>
 </body>
 </html>

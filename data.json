@@ -1,312 +1,205 @@
 {
+  "theme": {
+    "active": "light-slate",
+    "available": [
+      "dark-indigo",
+      "dark-emerald",
+      "dark-violet",
+      "dark-amber",
+      "dark-cyan",
+      "dark-rose",
+      "light-arctic",
+      "light-slate",
+      "light-cream",
+      "light-lavender",
+      "light-paper",
+      "light-rose"
+    ]
+  },
+
   "person": {
     "firstName": "Gughanathan",
     "lastName": "Mani",
+    "handle": "gugupy",
     "role": "Python Developer / DevOps Engineer",
-    "avatar": "images/avatar.jpg",
-    "location": "Asia/Kolkata",
-    "languages": ["Tamil", "Kannada", "English"]
+    "phone": "+91 78993 29594",
+    "email": "gugu.ap900@gmail.com",
+    "location": "India",
+    "education": "B.Tech (Information Technology) — Anna University",
+    "languages": ["Tamil", "Kannada", "English"],
+    "freelancer": "https://www.freelancer.in/hireme/guguap900"
   },
 
   "social": [
-    { "name": "GitHub", "icon": "github", "link": "https://github.com/gugupy" },
-    { "name": "LinkedIn", "icon": "linkedin", "link": "https://www.linkedin.com/in/gughanathan-m-079913171" },
-    { "name": "X", "icon": "x", "link": "https://x.com/ManiGughan" },
-    { "name": "Email", "icon": "email", "link": "mailto:gugu.ap900@gmail.com" }
+    { "name": "GitHub", "link": "https://github.com/gugupy" },
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/gughanathan-m-079913171"
+    },
+    { "name": "X", "link": "https://x.com/ManiGughan" },
+    { "name": "Email", "link": "mailto:gugu.ap900@gmail.com" }
   ],
 
   "home": {
-    "label": "Home",
-    "name": "Gugu",
-    "headline": "Transforming Ideas into Scalable Systems",
-    "subline": "AI apps by day. Side projects by night. Debugging 24/7."
+    "headline": "Transforming Ideas into",
+    "headlineAccent": "Scalable Systems",
+    "role": "Python Developer / DevOps Engineer",
+    "description": "AI apps by day. Side projects by night. Debugging 24/7.",
+    "stack": ["Python", "FastAPI", "LangChain", "Docker", "GCP", "Kubernetes"]
   },
+
+  "stats": [
+    { "value": "9+", "label": "Years Experience" },
+    { "value": "15+", "label": "Projects Shipped" },
+    { "value": "3", "label": "Cloud Platforms" },
+    { "value": "4+", "label": "Open Source PRs" }
+  ],
 
   "about": {
-    "label": "About",
-    "title": "About me",
-    "calendar": {
-      "display": true,
-      "link": "https://teams.microsoft.com/l/meeting/new"
+    "bio": [
+      "A Python developer and DevOps engineer with 9+ years of experience building scalable, data-driven applications. I specialize in FastAPI, LangChain, and AI-powered solutions — from intelligent chatbots to automated data pipelines.",
+      "My work spans the full stack: crafting production-grade backends, architecting cloud infrastructure across Azure, AWS, and GCP using Terraform and Pulumi, and building voice assistants and AI workflows that solve real business problems.",
+      "When I'm not shipping code, I'm exploring new ways to bridge AI with real-world challenges — whether it's building low-latency voice agents, automating workflows, or turning raw data into actionable insights."
+    ],
+    "skills": [
+      {
+        "icon": "code",
+        "title": "Languages",
+        "tags": ["Python", "JavaScript", "TypeScript", "NodeJS", "GoLang"]
+      },
+      {
+        "icon": "cloud",
+        "title": "Cloud Platforms",
+        "tags": ["Azure", "AWS", "GCP"]
+      },
+      {
+        "icon": "ai",
+        "title": "Generative AI & LLMs",
+        "tags": [
+          "OpenAI API",
+          "Azure OpenAI Service",
+          "Realtime API",
+          "LangChain"
+        ]
+      },
+      {
+        "icon": "layers",
+        "title": "Frameworks & Libraries",
+        "tags": ["Flask", "FastAPI", "React", "Next.js", "React Flow"]
+      },
+      {
+        "icon": "container",
+        "title": "Containers & Orchestration",
+        "tags": ["Docker", "Kubernetes"]
+      },
+      {
+        "icon": "infra",
+        "title": "Infrastructure as Code",
+        "tags": ["Terraform", "Pulumi"]
+      },
+      {
+        "icon": "database",
+        "title": "Databases",
+        "tags": ["PostgreSQL", "MySQL", "MongoDB"]
+      },
+      {
+        "icon": "pipeline",
+        "title": "CI/CD & Testing",
+        "tags": ["PyTest", "GitHub Actions", "Azure DevOps Pipelines"]
+      }
+    ],
+    "experience": [
+      {
+        "company": "BI2Value GmBH",
+        "location": "Remote",
+        "role": "Python Developer / DevOps Engineer",
+        "period": "March 2023 — Present",
+        "bullets": [
+          "Built <strong>Phelina</strong> — an AI data assistant using LangChain + OpenAI that answers complex business queries in natural language, deployed across Teams, Slack, and WhatsApp.",
+          "Customized and maintained <strong>Apache Superset</strong> for enterprise BI dashboards with custom plugin development.",
+          "Designed and maintained <strong>Airflow DAGs</strong> for production data pipelines and ETL workflows.",
+          "Managed cloud infrastructure on <strong>Azure and AWS</strong> using Terraform and Pulumi.",
+          "Developed <strong>Fonki</strong> — a 24/7 AI phone assistant with VoIP integration for automated call handling and lead qualification."
+        ]
+      },
+      {
+        "company": "ITC Infotech India Ltd",
+        "location": "Bengaluru",
+        "role": "Linux Administrator / Azure Cloud Engineer",
+        "period": "2019 — 2023",
+        "bullets": [
+          "Managed and maintained Linux servers and Azure cloud infrastructure for enterprise clients.",
+          "Set up complete infrastructure for new projects including networking, security, and monitoring."
+        ]
+      },
+      {
+        "company": "Fractalio Data Pvt Ltd",
+        "role": "Linux Administrator",
+        "period": "2017 — 2019",
+        "bullets": [
+          "Managed and maintained Linux servers on client sites.",
+          "Monitored daily and monthly backups for production servers."
+        ]
+      }
+    ]
+  },
+
+  "projects": [
+    {
+      "icon": "phone",
+      "name": "Fonki",
+      "description": "AI-powered phone assistant available 24/7. Fully automated call center that answers every call, qualifies leads, and books appointments around the clock — even outside business hours. 100% GDPR compliant, made in Germany.",
+      "tags": ["AI", "VoIP", "Automation", "SaaS"],
+      "live": "https://fonki.de/",
+      "github": ""
     },
-    "freelancer": {
-      "display": true,
-      "link": "https://www.freelancer.in/hireme/guguap900"
+    {
+      "icon": "sparkles",
+      "name": "PAFIS",
+      "description": "Predictive Avionics Fault Isolation System — an AI-driven decision-support platform that helps aviation maintenance teams resolve aircraft faults faster by correlating ECAM messages with MEL logic, circuit breaker data, and root cause analysis.",
+      "tags": ["Python", "AI", "Aviation", "Predictive Diagnostics"],
+      "live": "https://pafis.vercel.app/",
+      "github": ""
     },
-    "intro": {
-      "title": "Introduction",
-      "description": "A Python developer and DevOps engineer with 9+ years of experience building scalable, data-driven applications. I specialize in Flask-AppBuilder, Apache Superset, and AI-powered solutions using OpenAI and LangChain — from intelligent chatbots to automated data pipelines.\n\nI'm an active open-source contributor, with pull requests merged into projects like Flask-AppBuilder, Chatwoot, and even CPython. My work spans the full stack — from crafting ReactJS frontends to architecting cloud infrastructure across Azure, AWS, and GCP using Terraform and Pulumi.\n\nWhen I'm not shipping code, I'm exploring new ways to bridge AI with real-world business problems — whether it's building voice assistants, automating workflows, or turning raw data into actionable insights."
+    {
+      "icon": "rocket",
+      "name": "Fastify Admin",
+      "description": "A self-hosted admin panel for Fastify + MikroORM. One plugin, zero frontend work — get authentication, RBAC, and full CRUD for every entity in minutes.",
+      "tags": ["Fastify", "Node.js", "MikroORM"],
+      "live": "https://fastifyadmin.dev",
+      "github": "https://github.com/gugupy/fastify-admin.git"
     },
-    "work": {
-      "title": "Work Experience",
-      "experiences": [
-        {
-          "company": "BI2Value GmBH",
-          "timeframe": "2023 - Present",
-          "role": "Python Developer/DevOps Engineer",
-          "achievements": [
-            "Customize Apache superset and maintain.",
-            "Developing Phelina a powerful AI for Data insights.",
-            "Create and maintain the Airflow DAGs for the data pipeline.",
-            "Maintain infrastructure on Azure and AWS."
-          ]
-        },
-        {
-          "company": "ITC Infotech India Ltd",
-          "timeframe": "2019 - 2023",
-          "role": "Linux Administrator/Azure Cloud Engineer",
-          "achievements": [
-            "Managed and maintained Linux servers and Azure cloud infrastructure.",
-            "Setup complete infrastructure for the new projects."
-          ]
-        },
-        {
-          "company": "Fractalio Data Pvt Ltd",
-          "timeframe": "2017 - 2019",
-          "role": "Linux Administrator",
-          "achievements": [
-            "Managed and maintained Linux servers on client site.",
-            "Monitor daily and monthly backup of the servers."
-          ]
-        }
-      ]
+    {
+      "icon": "lock",
+      "name": "AdminJS Keycloak Provider",
+      "description": "Open-source Keycloak authentication provider for AdminJS with Express integration. Integrates OAuth2 / OpenID Connect for secure enterprise authentication.",
+      "tags": ["TypeScript", "Keycloak", "AdminJS", "OAuth2"],
+      "live": "https://www.npmjs.com/package/@gugupy/adminjs-keycloak",
+      "github": "https://github.com/gugupy/adminjs-keycloak"
     },
-    "studies": {
-      "title": "Studies",
-      "institutions": [
-        {
-          "name": "Anna University",
-          "description": "Studied software engineering."
-        }
-      ]
+    {
+      "icon": "book",
+      "name": "Hausaufgaben Wiki",
+      "description": "Homework management platform for German schools with AI-assisted validation, school/grade/class filters, calendar interface, and comment/solution attachments.",
+      "tags": ["Next.js", "AI", "Education", "TypeScript"],
+      "live": "https://hausaufgaben.wiki/",
+      "github": ""
     },
-    "technical": {
-      "title": "Technical skills",
-      "skills": [
-        {
-          "title": "Languages",
-          "items": ["Python", "JavaScript/TypeScript", "NodeJS", "GoLang"],
-          "description": "Able to build any software using Python.",
-          "icon": "code"
-        },
-        {
-          "title": "Cloud Platforms",
-          "items": ["Azure", "AWS", "GCP"],
-          "description": "Proficient across all major cloud platforms.",
-          "icon": "cloud"
-        },
-        {
-          "title": "Infrastructure as Code (IaC)",
-          "items": ["Pulumi", "Terraform"],
-          "description": "Experience in Pulumi and Terraform.",
-          "icon": "iac"
-        },
-        {
-          "title": "Generative AI & LLMs",
-          "items": ["OpenAI API", "Azure OpenAI Service", "Realtime API"],
-          "description": "Building high-performance, AI-powered applications including low-latency voice and multimodal experiences.",
-          "icon": "ai"
-        },
-        {
-          "title": "Databases",
-          "items": ["PostgreSQL", "MySQL", "MongoDB"],
-          "description": "Designing and optimizing database schemas, queries, and performance tuning.",
-          "icon": "db"
-        },
-        {
-          "title": "Testing & CI/CD",
-          "items": ["PyTest", "GitHub Actions", "Azure DevOps Pipelines"],
-          "description": "Implementing robust testing strategies and automating CI/CD pipelines for seamless deployments.",
-          "icon": "test"
-        },
-        {
-          "title": "Containerization & Orchestration",
-          "items": ["Docker", "Kubernetes"],
-          "description": "Containerizing applications and orchestrating them using Kubernetes for scalable deployments.",
-          "icon": "container"
-        },
-        {
-          "title": "Frameworks & Libraries",
-          "items": ["Flask", "FastAPI", "React", "Next.js", "React Flow"],
-          "description": "Building web applications and APIs using popular frameworks and libraries.",
-          "icon": "framework"
-        }
-      ]
+    {
+      "icon": "bot",
+      "name": "Langchain Agent Bot",
+      "description": "Intelligent chatbot implementation using LangChain integrated with Chatwoot for seamless customer support automation. Contributed to official Chatwoot implementation examples.",
+      "tags": ["Python", "LangChain", "AI", "Chatwoot"],
+      "live": "",
+      "github": "https://github.com/chatwoot/implementation-examples"
+    },
+    {
+      "icon": "radio",
+      "name": "Morse Code Translator",
+      "description": "Python module for converting plaintext to Morse code and vice versa. Published on PyPI as morse-transcript for easy integration in any Python project.",
+      "tags": ["Python", "CLI", "PyPI"],
+      "live": "https://pypi.org/project/morse-transcript/",
+      "github": "https://github.com/gugupy/morsecodetranslator"
     }
-  },
-
-  "projects": {
-    "title": "Featured Projects",
-    "items": [
-      {
-        "name": "Hausaufgaben Wiki",
-        "order": 3,
-        "category": "client",
-        "description": "Homework management platform for German schools with AI-assisted validation, school/grade/class filters, calendar interface, and comment/solution attachments.",
-        "image": "images/projects/hausaufgaben.jpg",
-        "tags": ["Next.js", "AI", "Education", "TypeScript"],
-        "links": {
-          "live": "https://hausaufgaben.wiki/",
-          "github": ""
-        }
-      },
-      {
-        "name": "AdminJS Keycloak Provider",
-        "order": 2,
-        "category": "personal",
-        "description": "Open-source Keycloak authentication provider for AdminJS with Express integration. Integrates OAuth2/OpenID Connect for secure enterprise authentication.",
-        "image": "images/projects/adminjs.jpg",
-        "tags": ["TypeScript", "Keycloak", "AdminJS", "OAuth2"],
-        "links": {
-          "live": "https://www.npmjs.com/package/@gugupy/adminjs-keycloak",
-          "github": "https://github.com/gugupy/adminjs-keycloak"
-        }
-      },
-      {
-        "name": "Phelina AI Data Assistant",
-        "order": 4,
-        "category": "client",
-        "display": false,
-        "description": "Talk to your data naturally with Phelina. AI-powered assistant using LangChain and OpenAI for database querying, billing analysis, and financial forecasting. Available 24/7 on Teams, Slack, WhatsApp.",
-        "image": "images/projects/phelina.gif",
-        "tags": ["Python", "LangChain", "OpenAI", "Bot Framework"],
-        "links": {
-          "live": "https://qmantic.com/ai-data-assistant/",
-          "github": ""
-        }
-      },
-      {
-        "name": "Morse Code Translator",
-        "order": 6,
-        "category": "personal",
-        "description": "Python module for converting plaintext to Morse code and vice versa. Available via pip as morse-transcript package for easy integration.",
-        "image": "images/projects/morse.jpg",
-        "tags": ["Python", "CLI", "PyPI"],
-        "links": {
-          "live": "https://pypi.org/project/morse-transcript/",
-          "github": "https://github.com/gugupy/morsecodetranslator"
-        }
-      },
-      {
-        "name": "Langchain Agent Bot",
-        "order": 5,
-        "category": "personal",
-        "description": "Intelligent chatbot implementation using Langchain framework integrated with Chatwoot for seamless customer support automation.",
-        "image": "images/projects/chatbot.jpg",
-        "tags": ["Python", "Langchain", "AI", "Chatwoot"],
-        "links": {
-          "live": "",
-          "github": "https://github.com/chatwoot/implementation-examples"
-        }      },
-      {
-        "name": "Fonki",
-        "order": 1,
-        "category": "client",
-        "display": false,
-        "description": "AI-powered phone assistant available 24/7. Fully automated call center that answers every call automatically, qualifies leads, and books appointments around the clock — even outside business hours. 100% GDPR compliant, made in Germany.",
-        "image": "images/projects/fonki.jpg",
-        "tags": ["AI", "VoIP", "Automation", "SaaS"],
-        "links": {
-          "live": "https://fonki.de/",
-          "github": ""
-        }      },
-      {
-        "name": "Fastify Admin",
-        "order": 1,
-        "category": "personal",
-        "display": true,
-        "description": "A self-hosted admin panel for Fastify + MikroORM. One plugin, zero frontend work — get authentication, RBAC, and full CRUD for every entity in minutes.",
-        "image": "images/projects/fastify-admin.jpg",
-        "tags": ["Fastify", "Node.js", "Admin", "Coming Soon"],
-        "links": {
-          "live": "https://fastifyadmin.dev",
-          "github": "https://github.com/gugupy/fastify-admin.git"
-        }
-      },
-      {
-        "name": "mhps.org.in",
-        "order": 1,
-        "category": "client",
-        "display": false,
-        "description": "Migrate the existing website from its current setup (React) to a modern CMS-driven architecture powered by Django and Wagtail. The goal is to make the site easier to manage, scalable, and editor-friendly while keeping performance and SEO intact.",
-        "image": "images/projects/data-insights.jpg",
-        "tags": ["Django", "Wagtail", "CMS", "Python"],
-        "links": {
-          "live": "https://mhps.org.in",
-          "github": ""
-        }
-      }
-    ]
-  },
-
-  "gitHub": {
-    "username": "gugupy",
-    "title": "Public GitHub Contributions",
-    "contributions": [
-      {
-        "repoName": "Flask-Appbuilder",
-        "repoUrl": "https://github.com/dpgaspar/Flask-AppBuilder",
-        "contributions": [
-          {
-            "title": "refactor: enhance _get_list_widget and _list methods to accept additional kwargs",
-            "url": "https://github.com/dpgaspar/Flask-AppBuilder/pull/2285",
-            "type": "pull"
-          },
-          {
-            "title": "feat: ability to customize action button color",
-            "url": "https://github.com/dpgaspar/Flask-AppBuilder/pull/2288",
-            "type": "pull"
-          },
-          {
-            "title": "docs: updated Flask-Babel link and fix typo",
-            "url": "https://github.com/dpgaspar/Flask-AppBuilder/pull/2166",
-            "type": "pull"
-          }
-        ]
-      },
-      {
-        "repoName": "cpython",
-        "repoUrl": "https://github.com/python/cpython",
-        "contributions": [
-          {
-            "title": "No proper validation for month in Calendar Module",
-            "url": "https://github.com/python/cpython/issues/126476",
-            "type": "bug"
-          }
-        ]
-      },
-      {
-        "repoName": "apache/superset",
-        "repoUrl": "https://github.com/apache/superset",
-        "contributions": [
-          {
-            "title": "Bug Report: Time Grain issue on pivot-table-v2",
-            "url": "https://github.com/apache/superset/issues/24460",
-            "type": "bug"
-          }
-        ]
-      },
-      {
-        "repoName": "chatwoot/implementation-examples",
-        "repoUrl": "https://github.com/chatwoot/chatwoot",
-        "contributions": [
-          {
-            "title": "Initial commit for langchain-agent-bot",
-            "url": "https://github.com/chatwoot/implementation-examples/pull/10",
-            "type": "pull"
-          }
-        ]
-      }
-    ]
-  },
-
-  "gallery": {
-    "title": "My photo gallery",
-    "images": [
-      { "src": "images/gallery/vert-01.jpg", "alt": "image", "orientation": "vertical" },
-      { "src": "images/gallery/hori-01.jpg", "alt": "image", "orientation": "horizontal" },
-      { "src": "images/gallery/vert-02.jpg", "alt": "image", "orientation": "vertical" },
-      { "src": "images/gallery/hori-02.jpg", "alt": "image", "orientation": "horizontal" }
-    ]
-  }
+  ]
 }
