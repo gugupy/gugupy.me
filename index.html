@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gughanathan Mani — Python Developer / DevOps Engineer</title>
+  <meta name="description" content="Python developer and DevOps engineer building AI assistants, FastAPI backends and cloud infrastructure." />
+  <meta name="color-scheme" content="light dark" />
+  <!-- Apply saved theme before first paint so there is no flash -->
+  <script>
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem('gugupy-theme') || '{}')
+        var mode = s.mode || 'system'
+        var dark = mode === 'dark' || (mode === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.dataset.mode = dark ? 'dark' : 'light'
+        if (s.accent) document.documentElement.dataset.accent = s.accent
+      } catch (e) {}
+    })()
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="#hero" class="nav-logo" id="nav-logo"><span class="logo-dot">__</span>gugu<span class="logo-dot">__</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="theme-menu">
+          <button class="icon-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" aria-controls="theme-panel" aria-label="Change theme">
+            <svg width="18" height="18" aria-hidden="true"><use href="./static/icons.svg#icon-palette"/></svg>
+          </button>
+          <div class="theme-panel" id="theme-panel" hidden>
+            <p class="theme-panel-title">Appearance</p>
+            <div class="segmented" role="group" aria-label="Color mode" id="mode-group">
+              <button data-mode="light"><svg width="15" height="15" aria-hidden="true"><use href="./static/icons.svg#icon-sun"/></svg>Light</button>
+              <button data-mode="dark"><svg width="15" height="15" aria-hidden="true"><use href="./static/icons.svg#icon-moon"/></svg>Dark</button>
+              <button data-mode="system"><svg width="15" height="15" aria-hidden="true"><use href="./static/icons.svg#icon-monitor"/></svg>Auto</button>
+            </div>
+            <p class="theme-panel-title">Accent</p>
+            <div class="swatches" role="group" aria-label="Accent color" id="accent-group"></div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-sm nav-hire">Hire me</a>
+        <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="nav-mobile" hidden>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Open to new opportunities</p>
+        <h1 class="hero-name" id="hero-name">Gughanathan Mani</h1>
+        <p class="hero-role" id="hero-role"></p>
+        <p class="hero-pitch" id="hero-pitch"></p>
+        <p class="hero-desc" id="hero-desc"></p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See my projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <ul class="hero-stack" id="hero-stack" aria-label="Core stack"></ul>
+      </div>
+      <figure class="hero-portrait">
+        <img src="./images/avatar-portrait.jpg" width="640" height="800" alt="Portrait of Gughanathan Mani" id="hero-photo" />
+        <figcaption id="hero-caption"></figcaption>
+      </figure>
+    </div>
+    <div class="container">
+      <dl class="stats" id="stats-bar"></dl>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <h2 class="section-title">I build the engine under the hood</h2>
+        <div class="about-text" id="about-text"></div>
+      </div>
+      <aside class="about-card" id="about-card" aria-label="Quick facts"></aside>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Where I've worked</h2>
+      <ol class="timeline" id="experience-timeline"></ol>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">Things I've built</h2>
+      <div class="projects-grid" id="projects-grid"></div>
+      <div class="projects-more">
+        <button type="button" class="btn btn-ghost" id="projects-more" aria-controls="projects-grid" aria-expanded="false" hidden>Show more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact-layout">
+      <div class="contact-intro">
+        <h2 class="contact-title">Let's build something together</h2>
+        <p class="contact-desc">Have a project in mind, a role to fill, or just want to talk shop about Python, AI or infrastructure? I'd like to hear about it.</p>
+
+        <p class="contact-sub">I can help with</p>
+        <ul class="contact-help">
+          <li>AI assistants, chatbots and voice agents</li>
+          <li>Python and FastAPI backends</li>
+          <li>Cloud infrastructure and CI/CD on Azure, AWS and GCP</li>
+          <li>Data pipelines and BI dashboards</li>
+        </ul>
+
+        <dl class="contact-meta">
+          <div><dt>Replies</dt><dd>Within a day</dd></div>
+          <div><dt>Time in India</dt><dd id="local-time">IST</dd></div>
+          <div><dt>Open to</dt><dd>Full-time &amp; freelance</dd></div>
+        </dl>
+      </div>
+
+      <div class="contact-panel">
+        <p class="contact-sub">Email me directly</p>
+        <div class="email-box">
+          <a class="email-address" id="contact-email" href="#"></a>
+          <button class="copy-btn" id="copy-email" type="button">
+            <svg width="16" height="16" aria-hidden="true"><use href="./static/icons.svg#icon-copy"/></svg><span>Copy</span>
+          </button>
+        </div>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        <a id="contact-email-btn" href="#" class="btn btn-primary btn-block btn-lg">
+          <svg width="18" height="18" aria-hidden="true"><use href="./static/icons.svg#icon-email"/></svg>Write an email
+        </a>
+
+        <p class="contact-sub contact-sub-links">Or find me on</p>
+        <ul class="contact-links" id="contact-links"></ul>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo" id="footer-name"><span class="logo-dot">__</span>gugu<span class="logo-dot">__</span></span>
+      <span class="footer-copy">© <span id="footer-year">2026</span> Gughanathan Mani · Made in India</span>
+      <div class="footer-links" id="footer-links"></div>
+    </div>
+  </footer>
+
+
+  <script src="./static/script.js"></script>
+</body>
+</html>

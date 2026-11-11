@@ -1,0 +1,488 @@
+{
+  "theme": {
+    "_comment": "Site default. Visitors can change it from the palette menu; their choice is remembered. mode: light | dark | system. accent: python | teal | forest | indigo | violet | amber | rose",
+    "mode": "system",
+    "accent": "python"
+  },
+
+  "person": {
+    "firstName": "Gughanathan",
+    "lastName": "Mani",
+    "handle": "gugupy",
+    "logo": "__gugu__",
+    "role": "Python Developer / DevOps Engineer",
+    "phone": "+91 78993 29594",
+    "email": "gugu.ap900@gmail.com",
+    "location": "India",
+    "education": "B.Tech (Information Technology) — Anna University",
+    "languages": ["Tamil", "Kannada", "English"],
+    "freelancer": "https://www.freelancer.in/hireme/guguap900"
+  },
+
+  "social": [
+    { "name": "GitHub", "link": "https://github.com/gugupy" },
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/gughanathan-m-079913171"
+    },
+    { "name": "X", "link": "https://x.com/ManiGughan" },
+    { "name": "Email", "link": "mailto:gugu.ap900@gmail.com" }
+  ],
+
+  "home": {
+    "headline": "Transforming Ideas into",
+    "headlineAccent": "Scalable Systems",
+    "role": "Python Developer / DevOps Engineer",
+    "description": "I build AI assistants and the cloud systems that keep them running.",
+    "stack": ["Python", "FastAPI", "LangChain", "Docker", "GCP", "Kubernetes"]
+  },
+
+  "stats": [
+    { "value": "9+", "label": "Years Experience" },
+    { "value": "15+", "label": "Projects Shipped" },
+    { "value": "3", "label": "Cloud Platforms" },
+    { "value": "4+", "label": "Open Source PRs" }
+  ],
+
+  "about": {
+    "bio": [
+      "A Python developer and DevOps engineer with 9+ years of experience building scalable, data-driven applications. I specialize in FastAPI, LangChain, and AI-powered solutions — from intelligent chatbots to automated data pipelines.",
+      "My work spans the full stack: crafting production-grade backends, architecting cloud infrastructure across Azure, AWS, and GCP using Terraform and Pulumi, and building voice assistants and AI workflows that solve real business problems.",
+      "When I'm not shipping code, I'm exploring new ways to bridge AI with real-world challenges — whether it's building low-latency voice agents, automating workflows, or turning raw data into actionable insights."
+    ],
+    "skills": [
+      {
+        "icon": "code",
+        "title": "Languages",
+        "tags": ["Python", "JavaScript", "TypeScript", "NodeJS", "GoLang"]
+      },
+      {
+        "icon": "cloud",
+        "title": "Cloud Platforms",
+        "tags": ["Azure", "AWS", "GCP"]
+      },
+      {
+        "icon": "ai",
+        "title": "Generative AI & LLMs",
+        "tags": [
+          "OpenAI API",
+          "Azure OpenAI Service",
+          "Realtime API",
+          "LangChain"
+        ]
+      },
+      {
+        "icon": "layers",
+        "title": "Frameworks & Libraries",
+        "tags": ["Flask", "FastAPI", "React", "Next.js", "React Flow"]
+      },
+      {
+        "icon": "container",
+        "title": "Containers & Orchestration",
+        "tags": ["Docker", "Kubernetes"]
+      },
+      {
+        "icon": "infra",
+        "title": "Infrastructure as Code",
+        "tags": ["Terraform", "Pulumi"]
+      },
+      {
+        "icon": "database",
+        "title": "Databases",
+        "tags": ["PostgreSQL", "MySQL", "MongoDB"]
+      },
+      {
+        "icon": "pipeline",
+        "title": "CI/CD & Testing",
+        "tags": ["PyTest", "GitHub Actions", "Azure DevOps Pipelines"]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Saksoft",
+        "location": "Bengalore",
+        "role": "Lead Consultant",
+        "period": "June 2026 — Present",
+        "bullets": [
+          "Design end-to-end <strong>solution architecture</strong> for client projects, from requirements to technical blueprint.",
+          "Lead the engineering team through <strong>delivery</strong> — planning, task breakdown, code reviews and release.",
+          "Act as the technical point of contact for clients, aligning solutions with business goals and timelines."
+        ]
+      },
+      {
+        "company": "BI2Value GmBH",
+        "location": "Remote",
+        "role": "Python Developer / DevOps Engineer",
+        "period": "Mar 2023 — June 2026",
+        "bullets": [
+          "Built <strong>Phelina</strong> — an AI data assistant using LangChain + OpenAI that answers complex business queries in natural language, deployed across Teams, Slack, and WhatsApp.",
+          "Customized and maintained <strong>Apache Superset</strong> for enterprise BI dashboards with custom plugin development.",
+          "Designed and maintained <strong>Airflow DAGs</strong> for production data pipelines and ETL workflows.",
+          "Managed cloud infrastructure on <strong>Azure and AWS</strong> using Terraform and Pulumi.",
+          "Developed <strong>Fonki</strong> — a 24/7 AI phone assistant with VoIP integration for automated call handling and lead qualification."
+        ]
+      },
+      {
+        "company": "ITC Infotech India Ltd",
+        "location": "Bengaluru",
+        "role": "Linux Administrator / Azure Cloud Engineer",
+        "period": "Mar 2019 — Feb 2023",
+        "bullets": [
+          "Managed and maintained Linux servers and Azure cloud infrastructure for enterprise clients.",
+          "Set up complete infrastructure for new projects including networking, security, and monitoring."
+        ]
+      },
+      {
+        "company": "Fractalio Data Pvt Ltd",
+        "role": "Linux Administrator",
+        "period": "Mar 2017 — Mar 2019",
+        "bullets": [
+          "Managed and maintained Linux servers on client sites.",
+          "Monitored daily and monthly backups for production servers."
+        ]
+      }
+    ]
+  },
+
+  "projects": [
+    {
+      "order": 2,
+      "slug": "fonki",
+      "icon": "phone",
+      "name": "Fonki",
+      "tagline": "An AI phone assistant that answers every call, 24/7.",
+      "description": "AI-powered phone assistant available 24/7. Fully automated call center that answers every call, qualifies leads, and books appointments around the clock — even outside business hours. 100% GDPR compliant, made in Germany.",
+      "overview": [
+        "Fonki is an AI-powered phone assistant that works as a fully automated call center. It answers every incoming call, qualifies leads and books appointments around the clock, including outside business hours.",
+        "It's built for businesses in Germany: made in Germany and 100% GDPR compliant."
+      ],
+      "features": [
+        {
+          "title": "Always on",
+          "text": "Answers every call around the clock, even outside business hours."
+        },
+        {
+          "title": "Lead qualification",
+          "text": "Qualifies callers automatically before they reach your team."
+        },
+        {
+          "title": "Appointment booking",
+          "text": "Books appointments directly during the call."
+        },
+        {
+          "title": "GDPR compliant",
+          "text": "100% GDPR compliant and made in Germany."
+        }
+      ],
+      "tags": ["AI", "VoIP", "Automation", "SaaS"],
+      "facts": [
+        ["Type", "SaaS"],
+        ["Market", "Germany"]
+      ],
+      "live": "https://fonki.de/",
+      "github": ""
+    },
+    {
+      "order": 3,
+      "slug": "pafis",
+      "icon": "sparkles",
+      "name": "PAFIS",
+      "tagline": "AI decision support for aircraft fault isolation.",
+      "description": "Predictive Avionics Fault Isolation System — an AI-driven decision-support platform that helps aviation maintenance teams resolve aircraft faults faster by correlating ECAM messages with MEL logic, circuit breaker data, and root cause analysis.",
+      "overview": [
+        "PAFIS (Predictive Avionics Fault Isolation System) is an AI-driven decision-support platform for aviation maintenance. It helps airlines, MROs and engineers isolate aircraft faults faster and more accurately.",
+        "It correlates ECAM messages with MEL logic, circuit breaker data, reset procedures and probable-cause flows, and adds a chat interface for asking about faults. It's a reference tool: OEM- and FAA-approved documentation always comes first."
+      ],
+      "features": [
+        {
+          "title": "Smart fault mapping",
+          "text": "Connects ECAM messages to MEL logic, circuit breaker locations, reset procedures and probable-cause flows."
+        },
+        {
+          "title": "Root cause analysis",
+          "text": "Guides engineers from a fault message to its most likely cause."
+        },
+        {
+          "title": "Chat with PAFIS",
+          "text": "Ask about a fault in plain language."
+        },
+        {
+          "title": "Predictive intelligence",
+          "text": "Coming soon: fault history by tail number, trend analysis and predictive diagnostics."
+        }
+      ],
+      "tags": ["Python", "AI", "Aviation", "Predictive Diagnostics"],
+      "facts": [
+        ["Domain", "Aviation maintenance"],
+        ["For", "Airlines, MROs, engineers"],
+        ["Status", "Looking for testers & partners"]
+      ],
+      "live": "https://pafis.vercel.app/",
+      "github": ""
+    },
+    {
+      "order": 4,
+      "slug": "fastify-admin",
+      "icon": "rocket",
+      "name": "Fastify Admin",
+      "tagline": "Admin panel for Fastify + MikroORM.",
+      "description": "A self-hosted admin panel for Fastify + MikroORM. One plugin, zero frontend work — get authentication, RBAC, and full CRUD for every entity in minutes.",
+      "overview": [
+        "Fastify Admin is a self-hosted admin panel for Fastify + MikroORM. Register one plugin and get authentication, role-based access control and full CRUD for every entity. The UI is bundled, so there is no frontend to build.",
+        "Entity views are plain classes that choose which fields to list, show, edit and add, and a CLI scaffolds projects, runs migrations and manages users."
+      ],
+      "features": [
+        {
+          "title": "Auto CRUD",
+          "text": "List, show, create, edit and delete views for every MikroORM entity."
+        },
+        {
+          "title": "Authentication",
+          "text": "Email/password with verification, optional email OTP MFA, and sign-in with Google, GitHub and Microsoft."
+        },
+        {
+          "title": "RBAC",
+          "text": "Per-entity roles and permissions, seeded automatically and manageable in the UI."
+        },
+        {
+          "title": "Zero frontend",
+          "text": "The UI ships bundled, with light, dark and system themes."
+        },
+        {
+          "title": "CLI",
+          "text": "npx fastify-admin scaffolds projects, generates resources, runs migrations and manages users."
+        }
+      ],
+      "tags": ["Fastify", "Node.js", "MikroORM"],
+      "facts": [
+        ["License", "MIT"],
+        ["Stack", "Fastify · MikroORM · TypeScript"],
+        ["Package", "npm"]
+      ],
+      "live": "https://fastifyadmin.dev",
+      "github": "https://github.com/gugupy/fastify-admin.git",
+      "cover": "images/projects/fastify-admin.jpg",
+      "snippet": {
+        "title": "Quick start",
+        "code": "npm install fastify-admin\nnpx fastify-admin init          # scaffold a project\nnpx fastify-admin migrate:up    # apply migrations\nnpx fastify-admin create-admin  # first admin user"
+      }
+    },
+    {
+      "order": 5,
+      "slug": "adminjs-keycloak",
+      "icon": "lock",
+      "name": "AdminJS Keycloak Provider",
+      "tagline": "Keycloak (OpenID Connect) sign-in for AdminJS.",
+      "description": "Open-source Keycloak authentication provider for AdminJS with Express integration. Integrates OAuth2 / OpenID Connect for secure enterprise authentication.",
+      "overview": [
+        "@gugupy/adminjs-keycloak is a minimal AdminJS auth provider for Keycloak. It exchanges an OAuth2 authorization code for tokens, fetches the user's info and returns an AdminJS CurrentAdmin object.",
+        "It's tested with @adminjs/express, and a runnable example app shows the full login and logout flow."
+      ],
+      "features": [
+        {
+          "title": "Code exchange",
+          "text": "Exchanges the authorization code for tokens and fetches user info from Keycloak."
+        },
+        {
+          "title": "CurrentAdmin mapping",
+          "text": "Returns the signed-in user as an AdminJS CurrentAdmin object."
+        },
+        {
+          "title": "Express callback",
+          "text": "A small middleware turns Keycloak's GET callback into the POST AdminJS expects."
+        },
+        {
+          "title": "Single sign-out",
+          "text": "Logout clears the session and redirects to Keycloak's logout endpoint."
+        }
+      ],
+      "tags": ["TypeScript", "Keycloak", "AdminJS", "OAuth2"],
+      "facts": [
+        ["License", "ISC"],
+        ["Package", "npm"],
+        ["Works with", "@adminjs/express"]
+      ],
+      "live": "https://www.npmjs.com/package/@gugupy/adminjs-keycloak",
+      "github": "https://github.com/gugupy/adminjs-keycloak",
+      "snippet": {
+        "title": "Install",
+        "code": "npm install @gugupy/adminjs-keycloak"
+      }
+    },
+    {
+      "order": 6,
+      "slug": "hausaufgaben-wiki",
+      "icon": "book",
+      "name": "Hausaufgaben Wiki",
+      "tagline": "Homework for every class in Germany, no sign-up needed.",
+      "description": "Homework management platform for German schools with AI-assisted validation, school/grade/class filters, calendar interface, and comment/solution attachments.",
+      "overview": [
+        "Hausaufgaben Wiki is a free homework platform for pupils in Germany. Pick your school, year group and class to see the homework posted for each day, on desktop or mobile.",
+        "Anyone in the class can add homework with subject, date and description, and it's visible to the whole class right away. No account, password or email is needed."
+      ],
+      "features": [
+        {
+          "title": "No sign-up",
+          "text": "No account, no password, no email."
+        },
+        {
+          "title": "Nationwide",
+          "text": "Search for your school and pick your year group and class; missing schools can be reported."
+        },
+        {
+          "title": "Shared homework",
+          "text": "Entries with subject, date and description are visible to the whole class immediately."
+        },
+        {
+          "title": "Daily overview",
+          "text": "See each day's homework at a glance, also on mobile."
+        },
+        {
+          "title": "AI-assisted validation",
+          "text": "Entries are checked with AI assistance."
+        },
+        {
+          "title": "Comments & solutions",
+          "text": "Attach comments and solutions to homework entries."
+        }
+      ],
+      "tags": ["Next.js", "AI", "Education", "TypeScript"],
+      "facts": [
+        ["For", "Pupils in Germany"],
+        ["Price", "Free"]
+      ],
+      "live": "https://hausaufgaben.wiki/",
+      "github": ""
+    },
+    {
+      "order": 7,
+      "slug": "langchain-agent-bot",
+      "icon": "bot",
+      "name": "Langchain Agent Bot",
+      "tagline": "A Chatwoot agent bot that answers from your SQL database.",
+      "description": "Intelligent chatbot implementation using LangChain integrated with Chatwoot for seamless customer support automation. Contributed to official Chatwoot implementation examples.",
+      "overview": [
+        "A sample Chatwoot agent bot built with LangChain's SQLDatabaseChain. Customers ask questions in a Chatwoot conversation and the bot answers them with data from a SQL database.",
+        "It's part of Chatwoot's official implementation-examples repository."
+      ],
+      "features": [
+        {
+          "title": "Natural-language SQL",
+          "text": "LangChain and OpenAI turn questions into queries against your database."
+        },
+        {
+          "title": "Chatwoot agent bot",
+          "text": "Plugs in through the agent bot's outgoing webhook URL."
+        },
+        {
+          "title": "Scoped access",
+          "text": "Choose which tables the bot is allowed to read."
+        },
+        {
+          "title": "Any SQL database",
+          "text": "PostgreSQL by default, others through SQLAlchemy dialects."
+        }
+      ],
+      "tags": ["Python", "LangChain", "AI", "Chatwoot"],
+      "facts": [
+        ["Stack", "Python · LangChain · OpenAI"],
+        ["Database", "PostgreSQL"],
+        ["Published in", "chatwoot/implementation-examples"]
+      ],
+      "live": "",
+      "github": "https://github.com/chatwoot/implementation-examples",
+      "snippet": {
+        "title": "Run",
+        "code": "python3 -m gunicorn app:app\n# Chatwoot bot outgoing URL: http://localhost:8000/langchain"
+      }
+    },
+    {
+      "order": 8,
+      "slug": "morse-code-translator",
+      "icon": "radio",
+      "name": "Morse Code Translator",
+      "tagline": "Plain text to Morse code and back, from Python or the terminal.",
+      "description": "Python module for converting plaintext to Morse code and vice versa. Published on PyPI as morse-transcript for easy integration in any Python project.",
+      "overview": [
+        "morse-transcript is a Python module for converting plain text to Morse code and back. It's published on PyPI and ships with a morse command-line tool.",
+        "Spacing follows the Morse convention: three spaces between letters and seven between words."
+      ],
+      "features": [
+        {
+          "title": "Encode & decode",
+          "text": "MorseCodeTranslator().encrypt() and .decrypt() in two lines of Python."
+        },
+        {
+          "title": "CLI",
+          "text": "morse encrypt and morse decrypt straight from the terminal."
+        },
+        {
+          "title": "On PyPI",
+          "text": "pip install morse-transcript and you're ready."
+        },
+        {
+          "title": "Tested",
+          "text": "Test coverage tracked with Codecov."
+        }
+      ],
+      "tags": ["Python", "CLI", "PyPI"],
+      "facts": [
+        ["License", "MIT"],
+        ["Language", "Python"],
+        ["Package", "PyPI"]
+      ],
+      "live": "https://pypi.org/project/morse-transcript/",
+      "github": "https://github.com/gugupy/morsecodetranslator",
+      "snippet": {
+        "title": "Try it",
+        "code": "pip install -U morse-transcript\nmorse encrypt --text 'MORSE CODE'\n# --   ---   .-.   ...   .       -.-.   ---   -..   ."
+      }
+    },
+    {
+      "order": 1,
+      "slug": "git-aliases",
+      "icon": "git",
+      "name": "Git Aliases",
+      "tagline": "An interactive CLI for managing your global Git aliases.",
+      "description": "Interactive Go CLI for managing useful aliases in Git's global configuration. Run it as “git aliases” — ships as a single ~4 MB binary for macOS, Linux, and Windows.",
+      "overview": [
+        "Git Aliases is a Go command-line tool for managing aliases in Git's global configuration without hand-editing ~/.gitconfig. Git runs any git-<name> program on your PATH as a subcommand, so once installed it runs as git aliases.",
+        "It builds to a single ~4 MB binary for macOS, Linux and Windows, and the binary needs nothing but Git."
+      ],
+      "features": [
+        {
+          "title": "Built-in alias set",
+          "text": "Pick from ready-made aliases like st, lg, last, unstage and theirs, and install them in one go."
+        },
+        {
+          "title": "Custom aliases",
+          "text": "Alias name, a searchable list of common Git commands and the command itself on one screen, with a preview before anything is replaced."
+        },
+        {
+          "title": "Filter and remove",
+          "text": "Filter your global aliases and remove the ones you no longer need."
+        },
+        {
+          "title": "Keyboard-first",
+          "text": "Space to toggle, Ctrl+A to select all, Tab between fields and Esc back to the menu."
+        },
+        {
+          "title": "Single binary",
+          "text": "Cross-compiled for macOS, Linux and Windows, with no runtime besides Git."
+        }
+      ],
+      "tags": ["Go", "CLI", "Git", "Developer Tools", "Hobby"],
+      "facts": [
+        ["Language", "Go"],
+        ["Platforms", "macOS · Linux · Windows"],
+        ["Binary size", "~4 MB"]
+      ],
+      "live": "",
+      "github": "https://github.com/gugupy/git-aliases",
+      "snippet": {
+        "title": "Install & run",
+        "code": "go install .\ngit aliases            # start the interactive CLI\n\n# a few of the built-in aliases\ngit st       # git status --short --branch\ngit lg       # git log --oneline --graph --decorate --all\ngit last     # git log -1 HEAD\ngit unstage  # git reset HEAD --"
+      }
+    }
+  ]
+}
