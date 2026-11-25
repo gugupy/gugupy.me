@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# Local tooling
+node_modules/
+*.log
+.env
+.env.*
+
+# Impeccable: keep shared config, ignore per-machine settings
+.impeccable/config.local.json
+
+# Claude Code per-machine settings
+.claude/settings.local.json
