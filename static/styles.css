@@ -3,6 +3,7 @@
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 img { display: block; max-width: 100%; height: auto; }
+picture { display: block; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
 /* ── Theme tokens ──────────────────────────────────────
@@ -25,13 +26,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   --border:   #dfe4ea;
   --text:     #141820;
   --muted:    #48515e;
-  --dim:      #687281;
+  --dim:      #636c7b;
   --shadow:   0 1px 2px rgb(20 24 32 / .05), 0 8px 24px -12px rgb(20 24 32 / .12);
 
   /* Default accent: Python blue */
   --accent:    #2f6ea5;
   --on-accent: #ffffff;
-  --success:   #15803d;
+  --success:   #166534;
+  color-scheme: light;
 }
 
 :root[data-mode="dark"] {
@@ -47,6 +49,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   --accent:    #7db4e6;
   --on-accent: #0f1217;
   --success:   #4ade80;
+  color-scheme: dark;
 }
 
 /* Accent palette — each has a light-mode and dark-mode value
@@ -80,15 +83,21 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  /* Footer sits at the bottom on short pages (loading, missing project) */
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; flex-direction: column;
   transition: background-color .3s var(--ease), color .3s var(--ease);
 }
 ::selection { background: color-mix(in srgb, var(--accent) 25%, transparent); }
+:root { accent-color: var(--accent); caret-color: var(--accent); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+main { flex: 1; }
 
 .skip-link {
   position: absolute; left: 16px; top: -60px; z-index: 200;
@@ -714,7 +723,9 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 }
 
 /* ── Project overview page ─────────────────────────── */
-.pd-loading, .pd-missing { padding: calc(var(--nav-h) + 96px) 24px 96px; color: var(--muted); }
+/* Vertical padding only, so the phone .container padding rule cannot reset it */
+.container.pd-loading, .container.pd-missing { padding-block: calc(var(--nav-h) + 96px) 96px; color: var(--muted); }
+.pd-missing .section-title { color: var(--text); }
 .pd-missing p { margin: -24px 0 28px; font-size: 17px; }
 
 .pd-hero { position: relative; padding: calc(var(--nav-h) + 36px) 0 88px; isolation: isolate; }
@@ -836,7 +847,7 @@ a.pd-step[rel="next"]:hover svg { transform: translateX(2px); }
 .pd-facts .fact { grid-template-columns: 104px 1fr; }
 .pd-facts .fact:last-child { border-bottom: 0; padding-bottom: 0; }
 .pd-facts dd a { color: var(--accent); }
-.pd-facts dd a:hover { text-decoration: underline; }
+.pd-facts dd a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .pd-features { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
 .pd-feature {
@@ -937,6 +948,10 @@ a.pd-step[rel="next"]:hover svg { transform: translateX(2px); }
   .skills-grid { grid-template-columns: 1fr; }
   .skill, .skill:nth-child(n) { border-right: 0; border-bottom: 1px solid var(--border); }
   .skill:last-child { border-bottom: 0; }
+  /* Icon beside the heading keeps eight stacked cells from running ~1400px */
+  .skill { display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 16px; padding: 20px; }
+  .skill-icon { grid-row: 1 / span 2; margin-bottom: 0; }
+  .skill h3 { margin: 8px 0 4px; }
   .projects-grid { grid-template-columns: 1fr; }
   .contact-meta { grid-template-columns: 1fr; gap: 14px; }
   .contact-meta > div, .contact-meta > div + div { padding: 0; border: 0; }

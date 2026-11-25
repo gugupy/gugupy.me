@@ -10,7 +10,7 @@
     "lastName": "Mani",
     "handle": "gugupy",
     "logo": "__gugu__",
-    "role": "Python Developer / DevOps Engineer",
+    "role": "Lead Consultant · Python, AI & Cloud",
     "phone": "+91 78993 29594",
     "email": "gugu.ap900@gmail.com",
     "location": "India",
@@ -30,23 +30,22 @@
   ],
 
   "home": {
-    "headline": "Transforming Ideas into",
-    "headlineAccent": "Scalable Systems",
-    "role": "Python Developer / DevOps Engineer",
+    "pitch": "Transforming ideas into scalable systems.",
+    "role": "Lead Consultant · Python, AI & Cloud",
     "description": "I build AI assistants and the cloud systems that keep them running.",
     "stack": ["Python", "FastAPI", "LangChain", "Docker", "GCP", "Kubernetes"]
   },
 
   "stats": [
-    { "value": "9+", "label": "Years Experience" },
-    { "value": "15+", "label": "Projects Shipped" },
-    { "value": "3", "label": "Cloud Platforms" },
-    { "value": "4+", "label": "Open Source PRs" }
+    { "value": "9+", "label": "Years of experience" },
+    { "value": "15+", "label": "Projects shipped" },
+    { "value": "3", "label": "Cloud platforms" },
+    { "value": "4+", "label": "Open-source PRs" }
   ],
 
   "about": {
     "bio": [
-      "A Python developer and DevOps engineer with 9+ years of experience building scalable, data-driven applications. I specialize in FastAPI, LangChain, and AI-powered solutions — from intelligent chatbots to automated data pipelines.",
+      "A lead consultant with 9+ years of experience. I design end-to-end solution architecture, lead engineering teams through delivery, and act as the technical point of contact for clients, while staying hands-on with Python, FastAPI, LangChain and AI-powered systems.",
       "My work spans the full stack: crafting production-grade backends, architecting cloud infrastructure across Azure, AWS, and GCP using Terraform and Pulumi, and building voice assistants and AI workflows that solve real business problems.",
       "When I'm not shipping code, I'm exploring new ways to bridge AI with real-world challenges — whether it's building low-latency voice agents, automating workflows, or turning raw data into actionable insights."
     ],
@@ -54,7 +53,7 @@
       {
         "icon": "code",
         "title": "Languages",
-        "tags": ["Python", "JavaScript", "TypeScript", "NodeJS", "GoLang"]
+        "tags": ["Python", "JavaScript", "TypeScript", "Node.js", "Go"]
       },
       {
         "icon": "cloud",
@@ -100,9 +99,9 @@
     "experience": [
       {
         "company": "Saksoft",
-        "location": "Bengalore",
+        "location": "Bengaluru",
         "role": "Lead Consultant",
-        "period": "June 2026 — Present",
+        "period": "Jun 2026 — Present",
         "bullets": [
           "Design end-to-end <strong>solution architecture</strong> for client projects, from requirements to technical blueprint.",
           "Lead the engineering team through <strong>delivery</strong> — planning, task breakdown, code reviews and release.",
@@ -110,10 +109,10 @@
         ]
       },
       {
-        "company": "BI2Value GmBH",
+        "company": "BI2Value GmbH",
         "location": "Remote",
         "role": "Python Developer / DevOps Engineer",
-        "period": "Mar 2023 — June 2026",
+        "period": "Mar 2023 — Jun 2026",
         "bullets": [
           "Built <strong>Phelina</strong> — an AI data assistant using LangChain + OpenAI that answers complex business queries in natural language, deployed across Teams, Slack, and WhatsApp.",
           "Customized and maintained <strong>Apache Superset</strong> for enterprise BI dashboards with custom plugin development.",
@@ -262,6 +261,7 @@
       "live": "https://fastifyadmin.dev",
       "github": "https://github.com/gugupy/fastify-admin.git",
       "cover": "images/projects/fastify-admin.jpg",
+      "coverSrcset": "images/projects/fastify-admin-800.webp 800w, images/projects/fastify-admin.webp 1536w",
       "snippet": {
         "title": "Quick start",
         "code": "npm install fastify-admin\nnpx fastify-admin init          # scaffold a project\nnpx fastify-admin migrate:up    # apply migrations\nnpx fastify-admin create-admin  # first admin user"

@@ -192,8 +192,7 @@ function render(data) {
   document.getElementById('hero-name').innerHTML =
     `<span class="name-line"><span>${person.firstName}</span></span> <span class="name-line"><span>${person.lastName}</span></span>`
   document.getElementById('hero-role').textContent = home.role
-  const pitch = `${home.headline} ${home.headlineAccent}`.toLowerCase()
-  document.getElementById('hero-pitch').textContent = pitch.charAt(0).toUpperCase() + pitch.slice(1) + '.'
+  document.getElementById('hero-pitch').textContent = home.pitch
   document.getElementById('hero-desc').textContent = home.description
   document.getElementById('hero-stack').innerHTML = home.stack.map(s => `<li>${s}</li>`).join('')
   document.getElementById('hero-photo').alt = `Portrait of ${person.firstName} ${person.lastName}`
@@ -221,7 +220,7 @@ function render(data) {
   ]
   document.getElementById('about-card').innerHTML = `
     <dl>${facts.map(([k, v]) => `<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
-    <a href="mailto:${person.email}" class="btn btn-primary btn-block">Start a conversation</a>
+    <a href="mailto:${person.email}" class="btn btn-primary btn-block">Email me</a>
     ${person.freelancer ? `<a href="${person.freelancer}" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Hire me on Freelancer</a>` : ''}`
 
   // Skills
@@ -249,7 +248,7 @@ function render(data) {
       </div>
     </li>`).join('')
 
-  // Projects — sorted by "order" (1..N); only the first PROJECTS_VISIBLE show until "Show more"
+  // Projects — sorted by "order" (1..N); only the first PROJECTS_VISIBLE show until "Show N more projects"
   const PROJECTS_VISIBLE = 6
   const sortedProjects = sortProjects(projects)
   document.getElementById('projects-grid').innerHTML = sortedProjects.map((p, i) => {
@@ -275,7 +274,7 @@ function render(data) {
   if (extraCount > 0) {
     moreBtn.hidden = false
     const setLabel = expanded => {
-      moreBtn.textContent = expanded ? 'Show less' : `Show more (${extraCount})`
+      moreBtn.textContent = expanded ? 'Show fewer projects' : `Show ${extraCount} more ${extraCount === 1 ? 'project' : 'projects'}`
       moreBtn.setAttribute('aria-expanded', expanded)
     }
     setLabel(false)
@@ -363,15 +362,23 @@ function renderProject(data) {
 
   // Hero visual: cover image if there is one, otherwise the code snippet, otherwise a large icon tile
   let visual
-  if (p.cover) visual = `<figure class="pd-cover"><img src="./${esc(p.cover)}" alt="${esc(p.name)} preview" /></figure>`
+  if (p.cover) {
+    // Optional WebP set: "coverSrcset" in data.json, paths relative to the site root
+    const webp = p.coverSrcset
+      ? `<source type="image/webp" srcset="${esc(p.coverSrcset.replace(/(^|,\s*)/g, '$1./'))}" sizes="(max-width: 960px) calc(100vw - 48px), 540px" />`
+      : ''
+    visual = `<figure class="pd-cover"><picture>${webp}<img src="./${esc(p.cover)}" alt="${esc(p.name)} preview" fetchpriority="high" /></picture></figure>`
+  }
   else if (snippet) visual = snippet
   else visual = `<div class="pd-emblem" aria-hidden="true">${icon(p.icon, 72)}</div>`
   const snippetInBody = p.cover && snippet
 
+  // Long URLs wrap after a slash instead of mid-word
+  const breakable = s => esc(s).replace(/\//g, '/<wbr>')
   const facts = [
     ...(p.facts || []),
-    ...(p.live ? [['Website', `<a href="${esc(p.live)}" target="_blank" rel="noopener">${esc(prettyLink({ link: p.live }))}</a>`]] : []),
-    ...(p.github ? [['Source', `<a href="${esc(p.github)}" target="_blank" rel="noopener">${esc(prettyLink({ link: p.github }).replace(/\.git$/, ''))}</a>`]] : []),
+    ...(p.live ? [['Website', `<a href="${esc(p.live)}" target="_blank" rel="noopener">${breakable(prettyLink({ link: p.live }))}</a>`]] : []),
+    ...(p.github ? [['Source', `<a href="${esc(p.github)}" target="_blank" rel="noopener">${breakable(prettyLink({ link: p.github }).replace(/\.git$/, ''))}</a>`]] : []),
   ]
 
   const neighbour = (p2, dir) => p2 ? `

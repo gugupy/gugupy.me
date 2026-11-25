@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gughanathan Mani — Python Developer / DevOps Engineer</title>
-  <meta name="description" content="Python developer and DevOps engineer building AI assistants, FastAPI backends and cloud infrastructure." />
+  <title>Gughanathan Mani — Lead Consultant · Python, AI &amp; Cloud</title>
+  <meta name="description" content="Lead consultant building AI assistants, Python backends and the cloud systems that keep them running." />
   <meta name="color-scheme" content="light dark" />
   <!-- Apply saved theme before first paint so there is no flash -->
   <script>
@@ -22,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./static/styles.css" />
+  <!-- Page content renders from data.json: start fetching it in parallel with the script -->
+  <link rel="preload" href="./data.json" as="fetch" crossorigin="anonymous" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -73,7 +75,7 @@
   <section id="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Open to new opportunities</p>
+        <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Open to full-time roles and freelance work</p>
         <h1 class="hero-name" id="hero-name">Gughanathan Mani</h1>
         <p class="hero-role" id="hero-role"></p>
         <p class="hero-pitch" id="hero-pitch"></p>
@@ -85,7 +87,12 @@
         <ul class="hero-stack" id="hero-stack" aria-label="Core stack"></ul>
       </div>
       <figure class="hero-portrait">
-        <img src="./images/avatar-portrait.jpg" width="640" height="800" alt="Portrait of Gughanathan Mani" id="hero-photo" />
+        <picture>
+          <!-- Phones show a 112px square: a tighter head-and-shoulders crop keeps the face readable -->
+          <source media="(max-width: 720px)" type="image/webp" srcset="./images/avatar-square.webp" width="336" height="336" />
+          <source type="image/webp" srcset="./images/avatar-portrait-400.webp 400w, ./images/avatar-portrait.webp 640w" sizes="400px" />
+          <img src="./images/avatar-portrait.jpg" width="640" height="800" alt="Portrait of Gughanathan Mani" id="hero-photo" fetchpriority="high" />
+        </picture>
         <figcaption id="hero-caption"></figcaption>
       </figure>
     </div>
@@ -127,7 +134,7 @@
       <h2 class="section-title">Things I've built</h2>
       <div class="projects-grid" id="projects-grid"></div>
       <div class="projects-more">
-        <button type="button" class="btn btn-ghost" id="projects-more" aria-controls="projects-grid" aria-expanded="false" hidden>Show more</button>
+        <button type="button" class="btn btn-ghost" id="projects-more" aria-controls="projects-grid" aria-expanded="false" hidden>Show more projects</button>
       </div>
     </div>
   </section>
